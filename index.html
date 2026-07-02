@@ -104,6 +104,33 @@
             #slide-3 .md\:gap-5 { gap: 1.125rem !important; }
         }
 
+        /* Closing slide — large title with white → blue → green gradient */
+        #slide-18 .thanks-title {
+            font-size: 5rem !important;
+            line-height: 1.05 !important;
+            background: linear-gradient(to left, #ffffff 0%, #38bdf8 35%, #0ea5e9 55%, #10b981 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 40px rgba(14, 165, 233, 0.25));
+        }
+
+        @media (min-width: 768px) {
+            #slide-18 .thanks-title {
+                font-size: 6.5rem !important;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #slide-18 .thanks-title {
+                font-size: 8rem !important;
+            }
+        }
+
+        #slide-18 .thanks-underline {
+            background: linear-gradient(to left, #ffffff, #0ea5e9, #10b981);
+        }
+
         /* Global presentation scale — bigger cards & text across all slides */
         .slide-container .text-\[10px\] { font-size: 0.8125rem !important; line-height: 1.25rem !important; }
         .slide-container .text-xs { font-size: 0.9375rem !important; line-height: 1.375rem !important; }
@@ -254,7 +281,7 @@
             <button onclick="toggleFullscreen()" class="p-2 rounded-lg bg-brand-dark hover:bg-white/5 text-brand-muted hover:text-brand-text border border-white/5 transition-colors" title="מסך מלא">
                 <i class="fa-solid fa-expand"></i>
             </button>
-            <div class="text-xs text-brand-muted font-mono" id="slide-index-indicator">שקופית 1 / 17</div>
+            <div class="text-xs text-brand-muted font-mono" id="slide-index-indicator">שקופית 1 / 18</div>
         </div>
     </header>
 
@@ -384,12 +411,12 @@
 
         <!-- Slide 4: מי אנחנו -->
         <div id="slide-4" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
-            <div class="flex flex-col flex-grow justify-center">
-                <div class="text-right mb-6">
+            <div class="flex flex-col flex-grow min-h-0">
+                <div class="text-right mb-4 flex-shrink-0">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-white">מי אנחנו?</h2>
                 </div>
-                <div class="w-full h-full flex items-center justify-center">
-                    <img src="./Hativa.png" alt="חטיבת המרכזים הרפואיים הממשלתיים" class="max-w-full max-h-[470px] object-contain rounded-2xl" id="slide-3-hativa-image">
+                <div class="w-full flex-1 min-h-0 flex items-center justify-center">
+                    <img src="./Hativa.png" alt="חטיבת המרכזים הרפואיים הממשלתיים" class="max-w-full max-h-full object-contain rounded-2xl" id="slide-4-hativa-image">
                 </div>
             </div>
 
@@ -887,6 +914,26 @@
             </div>
         </div>
 
+        <!-- Slide 18: תודה רבה -->
+        <div id="slide-18" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-bl from-brand-primary/10 via-transparent to-brand-secondary/10 pointer-events-none"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-l from-brand-secondary/20 to-brand-primary/20 blur-3xl pointer-events-none"></div>
+
+            <div class="flex flex-col flex-grow justify-center items-center text-center relative z-10">
+                <h2 class="thanks-title font-extrabold tracking-tight">
+                    תודה רבה
+                </h2>
+                <div class="thanks-underline h-2 w-40 md:w-56 rounded-full mt-10 shadow-lg shadow-brand-primary/30"></div>
+            </div>
+
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
+                <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
+                <div class="flex items-center gap-3">
+                    <span>סיום</span>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- PLAYBAR & FOOTER CONTROLS -->
@@ -921,7 +968,7 @@
     <!-- SLIDE INTERACTIVE SCRIPT -->
     <script>
         let currentSlide = 1;
-        const totalSlides = 17;
+        const totalSlides = 18;
         
         // Render bullet indicators on load
         function renderBullets() {
