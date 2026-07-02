@@ -43,6 +43,65 @@
             aspect-ratio: 16 / 9;
             max-height: 760px;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        /* Main content area — shrinks so footer always stays visible */
+        .slide-container.flex-col > :not(.slide-footer):not(.absolute) {
+            flex: 1 1 0;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        /* Consistent footer bar across all slides */
+        .slide-container .slide-footer {
+            flex-shrink: 0;
+            font-size: 0.8125rem !important;
+            line-height: 1.25rem !important;
+            padding-top: 1rem !important;
+            padding-bottom: 0.25rem !important;
+        }
+
+        .slide-container .slide-footer span {
+            font-size: inherit !important;
+            line-height: inherit !important;
+        }
+
+        #slide-2 video {
+            max-height: 100% !important;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        /* Agenda slide — larger text & cards, fits 6 cards + footer */
+        #slide-3.slide-container {
+            padding: 2rem !important;
+        }
+
+        @media (min-width: 768px) {
+            #slide-3.slide-container {
+                padding: 2.5rem !important;
+            }
+        }
+
+        #slide-3 .text-sm { font-size: 0.9375rem !important; line-height: 1.4rem !important; }
+        #slide-3 .text-lg { font-size: 1.125rem !important; line-height: 1.375rem !important; }
+        #slide-3 .text-3xl { font-size: 1.875rem !important; line-height: 2.1rem !important; }
+        #slide-3 h3 { font-size: 1.0625rem !important; line-height: 1.4rem !important; margin-bottom: 0.5rem !important; }
+        #slide-3 .mb-6 { margin-bottom: 1rem !important; }
+        #slide-3 .mb-3 { margin-bottom: 0.625rem !important; }
+        #slide-3 .mb-2 { margin-bottom: 0.375rem !important; }
+        #slide-3 .p-5 { padding: 1.375rem !important; }
+        #slide-3 .gap-4 { gap: 1rem !important; }
+        #slide-3 .w-10 { width: 2.5rem !important; }
+        #slide-3 .h-10 { height: 2.5rem !important; }
+        #slide-3 .leading-relaxed { line-height: 1.5 !important; }
+
+        @media (min-width: 768px) {
+            #slide-3 .md\:text-4xl { font-size: 2.25rem !important; line-height: 2.5rem !important; }
+            #slide-3 .md\:gap-5 { gap: 1.125rem !important; }
         }
 
         /* Global presentation scale — bigger cards & text across all slides */
@@ -99,6 +158,10 @@
             #slide-14 .md\:text-3xl { font-size: 1.65rem !important; line-height: 2rem !important; }
         }
 
+        #slide-14 .mb-6 { margin-bottom: 1rem !important; }
+        #slide-14 .gap-6 { gap: 1rem !important; }
+        #slide-14 .bg-brand-dark\/40.p-6 { padding: 1.25rem !important; }
+
         /* Match both cards on slide 3 */
         #slide-10 .bg-brand-secondary\/5 h3,
         #slide-10 .bg-red-950\/10 h3 {
@@ -146,6 +209,10 @@
             #slide-15 .md\:text-xl { font-size: 1.125rem !important; line-height: 1.55rem !important; }
             #slide-15 .md\:text-4xl { font-size: 2rem !important; line-height: 2.3rem !important; }
         }
+
+        #slide-15 .mb-8 { margin-bottom: 1.25rem !important; }
+        #slide-15 .gap-6 { gap: 1rem !important; }
+        #slide-15 .bg-brand-dark\/40.p-6 { padding: 1.25rem !important; }
         .slide-hidden {
             display: none;
             opacity: 0;
@@ -221,7 +288,7 @@
                 </div>
             </div>
 
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>שקופית פתיחה</span>
@@ -231,16 +298,16 @@
 
         <!-- Slide 2: סרטון -->
         <div id="slide-2" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
-            <div class="flex flex-col flex-grow justify-center">
-                <div class="w-full h-full flex items-center justify-center">
-                    <video class="w-full max-h-[560px] rounded-2xl bg-black/30 border border-white/5" controls preload="metadata">
+            <div class="flex flex-col flex-grow justify-center min-h-0">
+                <div class="w-full h-full min-h-0 flex items-center justify-center">
+                    <video class="w-full max-h-full rounded-2xl bg-black/30 border border-white/5" controls preload="metadata">
                         <source src="./Birth_Digital_Journy.mp4" type="video/mp4">
                         הדפדפן אינו תומך בניגון וידאו.
                     </video>
                 </div>
             </div>
 
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>סרטון</span>
@@ -256,7 +323,7 @@
                     <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">על מה נדבר היום?</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 my-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
                     <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-right">
                         <div class="w-10 h-10 rounded-lg bg-brand-primary/15 text-brand-primary flex items-center justify-center text-lg mb-3">
                             <i class="fa-solid fa-building"></i>
@@ -307,7 +374,7 @@
                 </div>
             </div>
 
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>אג'נדה</span>
@@ -326,7 +393,7 @@
                 </div>
             </div>
 
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>מי אנחנו</span>
@@ -342,7 +409,7 @@
                 </h2>
             </div>
 
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>תכנון הפרויקט</span>
@@ -358,7 +425,7 @@
                 </h2>
             </div>
 
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>לו"ז הפרויקט</span>
@@ -382,7 +449,7 @@
                 </p>
             </div>
             
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>הקצאת תעודת זהות</span>
@@ -432,7 +499,7 @@
                 </div>
             </div>
             
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>ארכיטקטורת נתונים</span>
@@ -458,7 +525,7 @@
                 </p>
             </div>
             
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>הודעת לידה</span>
@@ -505,7 +572,7 @@
                 </div>
             </div>
             
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>המהפכה העסקית</span>
@@ -572,7 +639,7 @@
                 </div>
             </div>
             
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>תכולת מסמכי לידה</span>
@@ -616,7 +683,7 @@
                 </div>
             </div>
             
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>יתרונות ותהליכים חכמים</span>
@@ -642,7 +709,7 @@
                 </p>
             </div>
             
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>דיווח לידה</span>
@@ -693,7 +760,7 @@
                 </div>
             </div>
             
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>שידור וקבלת משוב</span>
@@ -741,7 +808,7 @@
                 </div>
             </div>
 
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>אתגרים בפרויקט</span>
@@ -786,7 +853,7 @@
                 </div>
             </div>
 
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>שינויים ושיפורים</span>
@@ -812,7 +879,7 @@
                 </p>
             </div>
 
-            <div class="flex justify-between items-center pt-6 border-t border-white/5 text-xs text-brand-muted">
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
                     <span>קצת מספרים</span>
