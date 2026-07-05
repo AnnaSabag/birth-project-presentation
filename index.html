@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -75,37 +75,388 @@
             object-fit: contain;
         }
 
-        /* Agenda slide — larger text & cards, fits 6 cards + footer */
-        #slide-3.slide-container {
-            padding: 2rem !important;
+        /* Agenda slide — full-height centered card grid */
+        #slide-4.slide-container {
+            padding: 2rem 2.25rem 1.5rem !important;
         }
 
         @media (min-width: 768px) {
-            #slide-3.slide-container {
-                padding: 2.5rem !important;
+            #slide-4.slide-container {
+                padding: 2.25rem 2.75rem 1.75rem !important;
             }
         }
 
-        #slide-3 .text-sm { font-size: 0.9375rem !important; line-height: 1.4rem !important; }
-        #slide-3 .text-lg { font-size: 1.125rem !important; line-height: 1.375rem !important; }
-        #slide-3 .text-3xl { font-size: 1.875rem !important; line-height: 2.1rem !important; }
-        #slide-3 h3 { font-size: 1.0625rem !important; line-height: 1.4rem !important; margin-bottom: 0.5rem !important; }
-        #slide-3 .mb-6 { margin-bottom: 1rem !important; }
-        #slide-3 .mb-3 { margin-bottom: 0.625rem !important; }
-        #slide-3 .mb-2 { margin-bottom: 0.375rem !important; }
-        #slide-3 .p-5 { padding: 1.375rem !important; }
-        #slide-3 .gap-4 { gap: 1rem !important; }
-        #slide-3 .w-10 { width: 2.5rem !important; }
-        #slide-3 .h-10 { height: 2.5rem !important; }
-        #slide-3 .leading-relaxed { line-height: 1.5 !important; }
+        #slide-4 .agenda-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+        }
+
+        #slide-4 .agenda-header {
+            flex-shrink: 0;
+            text-align: right;
+            margin-bottom: 1.25rem;
+        }
 
         @media (min-width: 768px) {
-            #slide-3 .md\:text-4xl { font-size: 2.25rem !important; line-height: 2.5rem !important; }
-            #slide-3 .md\:gap-5 { gap: 1.125rem !important; }
+            #slide-4 .agenda-header {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        #slide-4 .agenda-header .agenda-eyebrow {
+            font-size: 0.9375rem !important;
+            line-height: 1.4rem !important;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 0.08em;
+        }
+
+        #slide-4 .agenda-header .agenda-title {
+            font-size: 1.875rem !important;
+            line-height: 2.1rem !important;
+            font-weight: 800;
+            color: #fff;
+            margin-top: 0.25rem;
+        }
+
+        @media (min-width: 768px) {
+            #slide-4 .agenda-header .agenda-title {
+                font-size: 2.25rem !important;
+                line-height: 2.5rem !important;
+            }
+        }
+
+        #slide-4 .agenda-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, minmax(0, 1fr));
+            gap: 0.875rem;
+            flex: 1;
+            min-height: 0;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            #slide-4 .agenda-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, minmax(0, 1fr));
+                gap: 1.125rem;
+            }
+        }
+
+        #slide-4 .agenda-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 0.875rem;
+            padding: 1.25rem 1rem;
+            min-height: 0;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1.25rem;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+        }
+
+        @media (min-width: 768px) {
+            #slide-4 .agenda-card {
+                gap: 1.125rem;
+                padding: 1.5rem 1.25rem;
+                border-radius: 1.5rem;
+            }
+        }
+
+        #slide-4 .agenda-card:hover {
+            border-color: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 0 32px rgba(14, 165, 233, 0.14), 0 8px 24px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        #slide-4 .agenda-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 3.25rem;
+            height: 3.25rem;
+            border-radius: 0.875rem;
+            font-size: 1.375rem;
+        }
+
+        @media (min-width: 768px) {
+            #slide-4 .agenda-icon {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 1rem;
+                font-size: 1.625rem;
+            }
+        }
+
+        #slide-4 .agenda-icon--primary { background: rgba(14, 165, 233, 0.15); color: #38bdf8; }
+        #slide-4 .agenda-icon--accent { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+        #slide-4 .agenda-icon--secondary { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        #slide-4 .agenda-icon--red { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+        #slide-4 .agenda-icon--sky { background: rgba(14, 165, 233, 0.15); color: #38bdf8; }
+        #slide-4 .agenda-icon--amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+
+        #slide-4 .agenda-card-title {
+            font-size: 1.25rem !important;
+            line-height: 1.35 !important;
+            font-weight: 800 !important;
+            color: #f8fafc;
+            margin: 0 !important;
+        }
+
+        @media (min-width: 768px) {
+            #slide-4 .agenda-card-title {
+                font-size: 1.5rem !important;
+            }
+        }
+
+        /* Slide 12 — proactive ID allocation flow */
+        @keyframes st12-fade-up {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes st12-draw-arrow {
+            from { opacity: 0; transform: scaleY(0); }
+            to { opacity: 1; transform: scaleY(1); }
+        }
+
+        #slide-12 .proactive-flow-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+            gap: 0.625rem;
+        }
+
+        #slide-12 .proactive-flow-header {
+            flex-shrink: 0;
+            text-align: right;
+            opacity: 0;
+            margin-bottom: 0.125rem;
+        }
+
+        #slide-12 .proactive-flow-eyebrow {
+            font-size: 0.75rem !important;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #38bdf8;
+        }
+
+        #slide-12 .proactive-flow-title {
+            font-size: 1.5rem !important;
+            line-height: 1.25 !important;
+            font-weight: 800;
+            color: #f8fafc;
+            margin-top: 0.25rem;
+        }
+
+        #slide-12 .proactive-flow-subtitle {
+            font-size: 0.9375rem !important;
+            line-height: 1.4rem !important;
+            color: #94a3b8;
+            margin-top: 0.25rem;
+        }
+
+        @media (min-width: 768px) {
+            #slide-12 .proactive-flow-title { font-size: 1.875rem !important; }
+            #slide-12 .proactive-flow-subtitle { font-size: 1rem !important; }
+        }
+
+        #slide-12 .proactive-flow-chain {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto 1fr auto 1fr auto 1fr;
+            align-items: stretch;
+            flex: 1;
+            min-height: 0;
+            gap: 0;
+            width: 100%;
+        }
+
+        #slide-12 .proactive-step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            min-height: 0;
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1rem;
+            text-align: right;
+            opacity: 0;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        @media (min-width: 768px) {
+            #slide-12 .proactive-step {
+                padding: 1.125rem 1.5rem;
+                gap: 1.125rem;
+                border-radius: 1.125rem;
+            }
+        }
+
+        #slide-12 .proactive-step:hover {
+            border-color: rgba(14, 165, 233, 0.25);
+            box-shadow: 0 0 24px rgba(14, 165, 233, 0.1);
+        }
+
+        #slide-12 .proactive-step-icon {
+            flex-shrink: 0;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        @media (min-width: 768px) {
+            #slide-12 .proactive-step-icon {
+                width: 3rem;
+                height: 3rem;
+                font-size: 1.375rem;
+            }
+        }
+
+        #slide-12 .proactive-step-icon--warning { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+        #slide-12 .proactive-step-icon--send { background: rgba(14, 165, 233, 0.15); color: #38bdf8; }
+        #slide-12 .proactive-step-icon--check { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        #slide-12 .proactive-step-icon--result { background: rgba(52, 211, 153, 0.15); color: #6ee7b7; }
+
+        #slide-12 .proactive-step-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        #slide-12 .proactive-step-title {
+            font-size: 1rem !important;
+            line-height: 1.35 !important;
+            font-weight: 800 !important;
+            color: #f8fafc;
+            margin: 0 0 0.375rem !important;
+        }
+
+        #slide-12 .proactive-step-text {
+            font-size: 0.875rem !important;
+            line-height: 1.5 !important;
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        @media (min-width: 768px) {
+            #slide-12 .proactive-step-title { font-size: 1.125rem !important; }
+            #slide-12 .proactive-step-text { font-size: 0.9375rem !important; line-height: 1.55 !important; }
+        }
+
+        #slide-12 .proactive-arrow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 1.125rem;
+            opacity: 0;
+            transform: scaleY(0);
+            transform-origin: top center;
+        }
+
+        #slide-12 .proactive-arrow-line {
+            width: 2px;
+            height: 0.5rem;
+            background: linear-gradient(to bottom, rgba(56, 189, 248, 0.55), rgba(16, 185, 129, 0.55));
+            border-radius: 999px;
+        }
+
+        #slide-12 .proactive-arrow-head {
+            font-size: 0.625rem;
+            color: rgba(56, 189, 248, 0.7);
+            margin-top: 0.125rem;
+        }
+
+        #slide-12.proactive-flow-replay .proactive-flow-header {
+            animation: st12-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        #slide-12.proactive-flow-replay .proactive-flow-chain > .proactive-step:nth-child(1) {
+            animation: st12-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+        }
+        #slide-12.proactive-flow-replay .proactive-flow-chain > .proactive-arrow:nth-child(2) {
+            animation: st12-draw-arrow 0.35s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+        }
+        #slide-12.proactive-flow-replay .proactive-flow-chain > .proactive-step:nth-child(3) {
+            animation: st12-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards;
+        }
+        #slide-12.proactive-flow-replay .proactive-flow-chain > .proactive-arrow:nth-child(4) {
+            animation: st12-draw-arrow 0.35s cubic-bezier(0.22, 1, 0.36, 1) 1.1s forwards;
+        }
+        #slide-12.proactive-flow-replay .proactive-flow-chain > .proactive-step:nth-child(5) {
+            animation: st12-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.35s forwards;
+        }
+        #slide-12.proactive-flow-replay .proactive-flow-chain > .proactive-arrow:nth-child(6) {
+            animation: st12-draw-arrow 0.35s cubic-bezier(0.22, 1, 0.36, 1) 1.6s forwards;
+        }
+        #slide-12.proactive-flow-replay .proactive-flow-chain > .proactive-step:nth-child(7) {
+            animation: st12-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.85s forwards;
+        }
+
+        /* Slide 14 — subtle info note above footer */
+        #slide-14 .slide-info-note {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.5rem 0.9rem;
+            margin-top: 0.5rem;
+            background: rgba(14, 165, 233, 0.06);
+            border: 1px solid rgba(14, 165, 233, 0.16);
+            border-radius: 0.875rem;
+            text-align: right;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        #slide-14 .slide-info-note-icon {
+            flex-shrink: 0;
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 0.4375rem;
+            background: rgba(14, 165, 233, 0.12);
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+
+        #slide-14 .slide-info-note-text {
+            font-size: 0.88rem !important;
+            line-height: 1.45 !important;
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        #slide-14 .slide-info-note-text strong {
+            color: #7dd3fc;
+            font-weight: 700;
+        }
+
+        @media (min-width: 768px) {
+            #slide-14 .slide-info-note-text {
+                font-size: 0.95rem !important;
+            }
+            #slide-14 .slide-info-note-icon {
+                width: 1.85rem;
+                height: 1.85rem;
+                font-size: 0.9rem;
+            }
         }
 
         /* Closing slide — large title with white → blue → green gradient */
-        #slide-18 .thanks-title {
+        #slide-22 .thanks-title {
             font-size: 5rem !important;
             line-height: 1.05 !important;
             background: linear-gradient(to left, #ffffff 0%, #38bdf8 35%, #0ea5e9 55%, #10b981 100%);
@@ -116,94 +467,100 @@
         }
 
         @media (min-width: 768px) {
-            #slide-18 .thanks-title {
+            #slide-22 .thanks-title {
                 font-size: 6.5rem !important;
             }
         }
 
         @media (min-width: 1024px) {
-            #slide-18 .thanks-title {
+            #slide-22 .thanks-title {
                 font-size: 8rem !important;
             }
         }
 
-        #slide-18 .thanks-underline {
+        #slide-22 .thanks-underline {
             background: linear-gradient(to left, #ffffff, #0ea5e9, #10b981);
         }
 
-        /* Global presentation scale — bigger cards & text across all slides */
-        .slide-container .text-\[10px\] { font-size: 0.8125rem !important; line-height: 1.25rem !important; }
-        .slide-container .text-xs { font-size: 0.9375rem !important; line-height: 1.375rem !important; }
-        .slide-container .text-sm { font-size: 1.0625rem !important; line-height: 1.625rem !important; }
-        .slide-container .text-base { font-size: 1.1875rem !important; line-height: 1.75rem !important; }
-        .slide-container .text-lg { font-size: 1.375rem !important; line-height: 1.875rem !important; }
-        .slide-container .text-xl { font-size: 1.5rem !important; line-height: 2rem !important; }
-        .slide-container .text-2xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
-        .slide-container .text-3xl { font-size: 2.25rem !important; line-height: 2.5rem !important; }
-        .slide-container .text-4xl { font-size: 2.75rem !important; line-height: 1.1 !important; }
-        .slide-container .text-5xl { font-size: 3.5rem !important; line-height: 1.1 !important; }
-        .slide-container .text-6xl { font-size: 4.25rem !important; line-height: 1.1 !important; }
+        /* Global presentation scale — proportional typography, cards & icons */
+        .slide-container .text-\[10px\] { font-size: 0.9rem !important; line-height: 1.35rem !important; }
+        .slide-container .text-xs { font-size: 1.03rem !important; line-height: 1.5rem !important; }
+        .slide-container .text-sm { font-size: 1.17rem !important; line-height: 1.75rem !important; }
+        .slide-container .text-base { font-size: 1.31rem !important; line-height: 1.9rem !important; }
+        .slide-container .text-lg { font-size: 1.51rem !important; line-height: 2rem !important; }
+        .slide-container .text-xl { font-size: 1.65rem !important; line-height: 2.15rem !important; }
+        .slide-container .text-2xl { font-size: 2.06rem !important; line-height: 2.45rem !important; }
+        .slide-container .text-3xl { font-size: 2.48rem !important; line-height: 2.7rem !important; }
+        .slide-container .text-4xl { font-size: 3.03rem !important; line-height: 1.12 !important; }
+        .slide-container .text-5xl { font-size: 3.85rem !important; line-height: 1.1 !important; }
+        .slide-container .text-6xl { font-size: 4.68rem !important; line-height: 1.08 !important; }
 
-        .slide-container .p-5 { padding: 1.75rem !important; }
-        .slide-container .p-6 { padding: 2.25rem !important; }
-        .slide-container .p-8 { padding: 2.5rem !important; }
-        .slide-container .gap-4 { gap: 1.5rem !important; }
-        .slide-container .gap-6 { gap: 2rem !important; }
-        .slide-container .gap-8 { gap: 2.5rem !important; }
-        .slide-container .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.875rem !important; }
-        .slide-container .space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 2rem !important; }
+        .slide-container .p-5 { padding: 1.93rem !important; }
+        .slide-container .p-6 { padding: 2.48rem !important; }
+        .slide-container .p-8 { padding: 2.75rem !important; }
+        .slide-container .gap-4 { gap: 1.65rem !important; }
+        .slide-container .gap-6 { gap: 2.2rem !important; }
+        .slide-container .gap-8 { gap: 2.75rem !important; }
+        .slide-container .space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.95rem !important; }
+        .slide-container .space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 2.2rem !important; }
 
-        .slide-container .w-10 { width: 3rem !important; }
-        .slide-container .h-10 { height: 3rem !important; }
-        .slide-container .w-12 { width: 3.5rem !important; }
-        .slide-container .h-12 { height: 3.5rem !important; }
+        .slide-container .w-10 { width: 3.3rem !important; }
+        .slide-container .h-10 { height: 3.3rem !important; }
+        .slide-container .w-12 { width: 3.85rem !important; }
+        .slide-container .h-12 { height: 3.85rem !important; }
 
         @media (min-width: 768px) {
-            .slide-container .md\:text-base { font-size: 1.1875rem !important; line-height: 1.75rem !important; }
-            .slide-container .md\:text-xl { font-size: 1.625rem !important; line-height: 2.125rem !important; }
-            .slide-container .md\:text-3xl { font-size: 2.5rem !important; line-height: 1.2 !important; }
-            .slide-container .md\:text-5xl { font-size: 3.75rem !important; line-height: 1.1 !important; }
-            .slide-container .md\:p-12 { padding: 3.5rem !important; }
+            .slide-container .md\:text-base { font-size: 1.31rem !important; line-height: 1.9rem !important; }
+            .slide-container .md\:text-xl { font-size: 1.79rem !important; line-height: 2.3rem !important; }
+            .slide-container .md\:text-3xl { font-size: 2.75rem !important; line-height: 1.2 !important; }
+            .slide-container .md\:text-4xl { font-size: 3.3rem !important; line-height: 1.12 !important; }
+            .slide-container .md\:text-5xl { font-size: 4.13rem !important; line-height: 1.08 !important; }
+            .slide-container .md\:p-12 { padding: 3.85rem !important; }
         }
 
         @media (min-width: 1024px) {
-            .slide-container .lg\:text-6xl { font-size: 4.75rem !important; line-height: 1.05 !important; }
+            .slide-container .lg\:text-6xl { font-size: 5.23rem !important; line-height: 1.05 !important; }
         }
 
-        /* Restore slide 6 text sizing */
-        #slide-14 .text-xs { font-size: 0.6875rem !important; line-height: 0.95rem !important; }
-        #slide-14 .text-sm { font-size: 0.8125rem !important; line-height: 1.15rem !important; }
-        #slide-14 .text-base { font-size: 0.9375rem !important; line-height: 1.35rem !important; }
-        #slide-14 .text-lg { font-size: 1rem !important; line-height: 1.45rem !important; }
-        #slide-14 .text-xl { font-size: 1.125rem !important; line-height: 1.55rem !important; }
-        #slide-14 .text-2xl { font-size: 1.35rem !important; line-height: 1.8rem !important; }
-        #slide-14 .text-3xl { font-size: 1.65rem !important; line-height: 2rem !important; }
+        /* Slide 18 — compact layout, scaled with global bump */
+        #slide-18 .text-xs { font-size: 0.85rem !important; line-height: 1.15rem !important; }
+        #slide-18 .text-sm { font-size: 1rem !important; line-height: 1.4rem !important; }
+        #slide-18 .text-base { font-size: 1.16rem !important; line-height: 1.6rem !important; }
+        #slide-18 .text-lg { font-size: 1.23rem !important; line-height: 1.7rem !important; }
+        #slide-18 .text-xl { font-size: 1.39rem !important; line-height: 1.8rem !important; }
+        #slide-18 .text-2xl { font-size: 1.66rem !important; line-height: 2rem !important; }
+        #slide-18 .text-3xl { font-size: 2.04rem !important; line-height: 2.35rem !important; }
 
         @media (min-width: 768px) {
-            #slide-14 .md\:text-base { font-size: 0.9375rem !important; line-height: 1.35rem !important; }
-            #slide-14 .md\:text-xl { font-size: 1.125rem !important; line-height: 1.55rem !important; }
-            #slide-14 .md\:text-3xl { font-size: 1.65rem !important; line-height: 2rem !important; }
+            #slide-18 .md\:text-base { font-size: 1.16rem !important; line-height: 1.6rem !important; }
+            #slide-18 .md\:text-xl { font-size: 1.39rem !important; line-height: 1.8rem !important; }
+            #slide-18 .md\:text-3xl { font-size: 2.04rem !important; line-height: 2.35rem !important; }
         }
 
-        #slide-14 .mb-6 { margin-bottom: 1rem !important; }
-        #slide-14 .gap-6 { gap: 1rem !important; }
-        #slide-14 .bg-brand-dark\/40.p-6 { padding: 1.25rem !important; }
+        #slide-18 .mb-6 { margin-bottom: 0.7rem !important; }
+        #slide-18 .mb-2 { margin-bottom: 0.35rem !important; }
+        #slide-18 .gap-6 { gap: 0.7rem !important; }
+        #slide-18 .space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.7rem !important; }
+        #slide-18 .bg-brand-dark\/40.p-6 { padding: 1.3rem !important; }
+        #slide-18 .w-12 { width: 4.1rem !important; }
+        #slide-18 .h-12 { height: 4.1rem !important; }
+        #slide-18 .bg-brand-dark\/40 .text-xl { font-size: 1.39rem !important; }
 
         /* Match both cards on slide 3 */
-        #slide-10 .bg-brand-secondary\/5 h3,
-        #slide-10 .bg-red-950\/10 h3 {
+        #slide-14 .bg-brand-secondary\/5 h3,
+        #slide-14 .bg-red-950\/10 h3 {
             font-size: 1.125rem !important;
             line-height: 1.6rem !important;
         }
 
-        #slide-10 .bg-brand-secondary\/5 ul,
-        #slide-10 .bg-red-950\/10 ul {
+        #slide-14 .bg-brand-secondary\/5 ul,
+        #slide-14 .bg-red-950\/10 ul {
             font-size: 0.9375rem !important;
             line-height: 1.45rem !important;
         }
 
-        #slide-10 .bg-brand-secondary\/5 li,
-        #slide-10 .bg-red-950\/10 li {
+        #slide-14 .bg-brand-secondary\/5 li,
+        #slide-14 .bg-red-950\/10 li {
             align-items: flex-start !important;
         }
 
@@ -221,25 +578,523 @@
             object-position: 56% center;
         }
 
-        /* Smaller text on slide 12 */
-        #slide-15 .text-xs { font-size: 0.75rem !important; line-height: 1rem !important; }
-        #slide-15 .text-sm { font-size: 0.875rem !important; line-height: 1.25rem !important; }
-        #slide-15 .text-base { font-size: 1rem !important; line-height: 1.45rem !important; }
-        #slide-15 .text-lg { font-size: 1rem !important; line-height: 1.45rem !important; }
-        #slide-15 .text-xl { font-size: 1.125rem !important; line-height: 1.55rem !important; }
-        #slide-15 .text-2xl { font-size: 1.35rem !important; line-height: 1.8rem !important; }
-        #slide-15 .text-3xl { font-size: 1.65rem !important; line-height: 2rem !important; }
-        #slide-15 .text-4xl { font-size: 2rem !important; line-height: 2.3rem !important; }
-
+        /* Slide 3 — team members */
+        #slide-3 .text-3xl { font-size: 2.5rem !important; line-height: 1.15 !important; }
         @media (min-width: 768px) {
-            #slide-15 .md\:text-base { font-size: 1rem !important; line-height: 1.45rem !important; }
-            #slide-15 .md\:text-xl { font-size: 1.125rem !important; line-height: 1.55rem !important; }
-            #slide-15 .md\:text-4xl { font-size: 2rem !important; line-height: 2.3rem !important; }
+            #slide-3 .md\:text-4xl { font-size: 3.25rem !important; line-height: 1.1 !important; }
         }
 
-        #slide-15 .mb-8 { margin-bottom: 1.25rem !important; }
-        #slide-15 .gap-6 { gap: 1rem !important; }
-        #slide-15 .bg-brand-dark\/40.p-6 { padding: 1.25rem !important; }
+        #slide-3 .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.25rem;
+            flex-grow: 1;
+            align-items: center;
+            justify-items: center;
+        }
+        @media (min-width: 768px) {
+            #slide-3 .team-grid { grid-template-columns: repeat(3, 1fr); gap: 2.75rem; }
+        }
+        #slide-3 .team-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            max-width: 18rem;
+        }
+        #slide-3 .team-photo-circle {
+            width: 11rem;
+            height: 11rem;
+            border-radius: 999px;
+            overflow: hidden;
+            position: relative;
+            border: 4px solid rgba(14, 165, 233, 0.35);
+            box-shadow: 0 0 36px rgba(14, 165, 233, 0.22);
+            margin-bottom: 1.25rem;
+            flex-shrink: 0;
+        }
+        @media (min-width: 768px) {
+            #slide-3 .team-photo-circle { width: 13.5rem; height: 13.5rem; }
+        }
+        #slide-3 .team-photo-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(16, 185, 129, 0.12));
+        }
+        #slide-3 .team-photo-placeholder i {
+            font-size: 3rem !important;
+        }
+        @media (min-width: 768px) {
+            #slide-3 .team-photo-placeholder i { font-size: 3.5rem !important; }
+        }
+        #slide-3 .team-photo {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #slide-3 .team-name {
+            font-size: 1.375rem !important;
+            font-weight: 800;
+            color: #f8fafc;
+            line-height: 1.35;
+            margin-bottom: 0.625rem;
+        }
+        @media (min-width: 768px) {
+            #slide-3 .team-name { font-size: 1.625rem !important; }
+        }
+        #slide-3 .team-role {
+            min-height: 2.75rem;
+            font-size: 1.0625rem !important;
+            line-height: 1.5;
+            color: #64748b;
+        }
+        @media (min-width: 768px) {
+            #slide-3 .team-role { font-size: 1.1875rem !important; }
+        }
+
+        /* Smaller text on slide 12 */
+        #slide-19 .text-xs { font-size: 0.83rem !important; line-height: 1.1rem !important; }
+        #slide-19 .text-sm { font-size: 0.96rem !important; line-height: 1.38rem !important; }
+        #slide-19 .text-base { font-size: 1.1rem !important; line-height: 1.58rem !important; }
+        #slide-19 .text-lg { font-size: 1.1rem !important; line-height: 1.58rem !important; }
+        #slide-19 .text-xl { font-size: 1.24rem !important; line-height: 1.7rem !important; }
+        #slide-19 .text-2xl { font-size: 1.49rem !important; line-height: 1.95rem !important; }
+        #slide-19 .text-3xl { font-size: 1.82rem !important; line-height: 2.15rem !important; }
+        #slide-19 .text-4xl { font-size: 2.2rem !important; line-height: 2.5rem !important; }
+
+        @media (min-width: 768px) {
+            #slide-19 .md\:text-base { font-size: 1.1rem !important; line-height: 1.58rem !important; }
+            #slide-19 .md\:text-xl { font-size: 1.24rem !important; line-height: 1.7rem !important; }
+            #slide-19 .md\:text-4xl { font-size: 2.2rem !important; line-height: 2.5rem !important; }
+        }
+
+        #slide-19 .mb-8 { margin-bottom: 1.1rem !important; }
+        #slide-19 .gap-6 { gap: 0.9rem !important; }
+        #slide-19 .bg-brand-dark\/40.p-6 { padding: 1.3rem !important; }
+
+        /* Slide 8 — premium project timeline */
+        @keyframes st8-fade-up {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes st8-draw-line {
+            from { transform: scaleX(0); opacity: 0.3; }
+            to { transform: scaleX(1); opacity: 1; }
+        }
+        @keyframes st8-node-pop {
+            from { opacity: 0; transform: scale(0.6); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        #slide-8.slide-container {
+            padding: 2rem 2.25rem 1.5rem !important;
+        }
+
+        @media (min-width: 768px) {
+            #slide-8.slide-container {
+                padding: 2.25rem 2.75rem 1.75rem !important;
+            }
+        }
+
+        #slide-8 .st8-header {
+            text-align: right;
+            margin-bottom: 1.5rem;
+            flex-shrink: 0;
+        }
+        #slide-8 .st8-eyebrow {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        #slide-8 .st8-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #f8fafc;
+            line-height: 1.12;
+            margin-top: 0.35rem;
+        }
+        @media (min-width: 768px) {
+            #slide-8 .st8-title { font-size: 3.1rem; }
+            #slide-8 .st8-header { margin-bottom: 1.75rem; }
+        }
+
+        #slide-8 .premium-timeline {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.25rem;
+            min-height: 0;
+            padding: 0;
+        }
+
+        #slide-8 .premium-timeline__track {
+            position: relative;
+            margin-bottom: 0;
+            padding: 0 0.75rem;
+            flex-shrink: 0;
+        }
+        #slide-8 .premium-timeline__line {
+            position: absolute;
+            top: 2.1rem;
+            right: 6%;
+            left: 6%;
+            height: 3px;
+            background: linear-gradient(to left, #0ea5e9, #10b981, #8b5cf6);
+            border-radius: 999px;
+            transform-origin: right center;
+            opacity: 0;
+        }
+        #slide-8 .premium-timeline__line-glow {
+            position: absolute;
+            inset: -7px 0;
+            background: linear-gradient(to left, rgba(14,165,233,0.45), rgba(16,185,129,0.35), rgba(139,92,246,0.45));
+            filter: blur(11px);
+            border-radius: 999px;
+            opacity: 0.55;
+        }
+        #slide-8 .premium-timeline__stations {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+        #slide-8 .premium-timeline__station {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+        }
+        #slide-8 .premium-timeline__node {
+            width: 4.15rem;
+            height: 4.15rem;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            background: #131c31;
+            border: 2px solid transparent;
+            position: relative;
+            margin-bottom: 1.1rem;
+        }
+        #slide-8 .premium-timeline__node--primary {
+            color: #0ea5e9;
+            border-color: rgba(14, 165, 233, 0.45);
+            box-shadow: 0 0 28px rgba(14, 165, 233, 0.28);
+        }
+        #slide-8 .premium-timeline__node--secondary {
+            color: #10b981;
+            border-color: rgba(16, 185, 129, 0.45);
+            box-shadow: 0 0 28px rgba(16, 185, 129, 0.25);
+        }
+        #slide-8 .premium-timeline__node--accent {
+            color: #8b5cf6;
+            border-color: rgba(139, 92, 246, 0.45);
+            box-shadow: 0 0 28px rgba(139, 92, 246, 0.25);
+        }
+        #slide-8 .station-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1.35;
+            margin-bottom: 0.4rem;
+        }
+        #slide-8 .station-period {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #64748b;
+            letter-spacing: 0.02em;
+            margin-bottom: 0;
+        }
+        @media (min-width: 768px) {
+            #slide-8 .station-title { font-size: 1.22rem; }
+            #slide-8 .station-period { font-size: 0.95rem; }
+            #slide-8 .premium-timeline__node { width: 4.35rem; height: 4.35rem; font-size: 1.45rem; }
+            #slide-8 .premium-timeline__line { top: 2.175rem; }
+        }
+
+        #slide-8 .premium-timeline__details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.125rem;
+            padding: 0;
+            flex: 1;
+            min-height: 0;
+            align-items: stretch;
+        }
+        #slide-8 .premium-timeline__detail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1.125rem;
+            padding: 1.25rem 1rem;
+            min-height: 0;
+        }
+        #slide-8 .station-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+            width: 100%;
+        }
+        #slide-8 .station-list li {
+            font-size: 0.95rem;
+            line-height: 1.45;
+            color: #94a3b8;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            flex-direction: row-reverse;
+        }
+        #slide-8 .station-list li::before {
+            content: '•';
+            color: #475569;
+            flex-shrink: 0;
+        }
+        @media (min-width: 768px) {
+            #slide-8 .station-list li { font-size: 1.02rem; }
+            #slide-8 .premium-timeline__detail { padding: 1.375rem 1.125rem; }
+        }
+
+        #slide-8.timeline-replay .st8-anim-header {
+            animation: st8-fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        #slide-8.timeline-replay .premium-timeline__line {
+            animation: st8-draw-line 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+        }
+        #slide-8.timeline-replay .premium-timeline__station:nth-child(1) {
+            animation: st8-node-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+        }
+        #slide-8.timeline-replay .premium-timeline__station:nth-child(2) {
+            animation: st8-node-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards;
+        }
+        #slide-8.timeline-replay .premium-timeline__station:nth-child(3) {
+            animation: st8-node-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.95s forwards;
+        }
+        #slide-8.timeline-replay .premium-timeline__detail:nth-child(1) {
+            animation: st8-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.15s forwards;
+        }
+        #slide-8.timeline-replay .premium-timeline__detail:nth-child(2) {
+            animation: st8-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.3s forwards;
+        }
+        #slide-8.timeline-replay .premium-timeline__detail:nth-child(3) {
+            animation: st8-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1.45s forwards;
+        }
+
+        /* Slide 9 — go-live cinematic timeline */
+        @keyframes st9-fade-down {
+            from { opacity: 0; transform: translateY(-14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes st9-fade-up {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes st9-dot-hit {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        @keyframes st9-final-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        @keyframes st9-rocket-lift {
+            0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 0 transparent); }
+            50% { transform: translateY(-5px); filter: drop-shadow(0 0 14px rgba(16, 185, 129, 0.55)); }
+        }
+
+        #slide-9 .golive-header { text-align: right; margin-bottom: 1.75rem; flex-shrink: 0; }
+        #slide-9 .golive-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #f8fafc;
+            line-height: 1.2;
+            opacity: 0;
+        }
+        #slide-9 .golive-eyebrow {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: #64748b;
+            margin-top: 0.5rem;
+            opacity: 0;
+        }
+        @media (min-width: 768px) {
+            #slide-9 .golive-title { font-size: 2.5rem; }
+        }
+
+        #slide-9.golive-playing .golive-title {
+            animation: st9-fade-down 0.7s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+        }
+        #slide-9.golive-playing .golive-eyebrow {
+            animation: st9-fade-down 0.65s cubic-bezier(0.45, 0, 0.55, 1) 0.35s forwards;
+        }
+
+        #slide-9 .golive-timeline { position: relative; padding: 0.5rem 0; }
+        #slide-9 .golive-row { position: relative; margin-bottom: 2.5rem; width: 100%; }
+        #slide-9 .golive-row:last-of-type { margin-bottom: 0; }
+
+        #slide-9 .golive-line-track {
+            position: absolute;
+            top: 0.65rem;
+            right: 4%;
+            left: 4%;
+            height: 3px;
+            border-radius: 999px;
+            overflow: hidden;
+            z-index: 0;
+        }
+        #slide-9 .golive-line-bg {
+            position: absolute;
+            inset: 0;
+            background: rgba(100, 116, 139, 0.15);
+            border-radius: 999px;
+        }
+        #slide-9 .golive-line-fill {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to left, #0ea5e9, #10b981, #8b5cf6);
+            border-radius: 999px;
+            box-shadow: 0 0 12px rgba(14, 165, 233, 0.35);
+            transition: width 0.55s cubic-bezier(0.45, 0, 0.55, 1);
+        }
+
+        #slide-9 .golive-nodes {
+            display: grid;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 0 4%;
+            box-sizing: border-box;
+        }
+        #slide-9 .golive-nodes--five {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            column-gap: 0.75rem;
+        }
+        #slide-9 .golive-nodes--four {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: 1.25rem;
+        }
+        #slide-9 .golive-node {
+            text-align: center;
+            padding: 0 0.35rem;
+            justify-self: center;
+            width: 100%;
+            max-width: 9.5rem;
+        }
+        @media (min-width: 768px) {
+            #slide-9 .golive-nodes--five { column-gap: 1rem; }
+            #slide-9 .golive-nodes--four { column-gap: 1.75rem; }
+            #slide-9 .golive-node { padding: 0 0.5rem; max-width: 10.5rem; }
+        }
+        #slide-9 .timeline-dot-wrap {
+            position: relative;
+            width: 1.35rem;
+            height: 1.35rem;
+            margin: 0 auto 0.625rem;
+        }
+        @media (min-width: 768px) {
+            #slide-9 .timeline-dot-wrap { width: 1.5rem; height: 1.5rem; }
+            #slide-9 .golive-line-track { top: 0.75rem; }
+        }
+        #slide-9 .timeline-dot {
+            width: 100%;
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #0ea5e9, #10b981);
+            border: 2px solid #131c31;
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.35);
+            transform: scale(0);
+            transition: box-shadow 0.5s ease-out;
+        }
+        #slide-9 .golive-node.is-ready .timeline-dot {
+            transform: scale(1);
+            transition: transform 0.25s cubic-bezier(0.45, 0, 0.55, 1);
+        }
+        #slide-9 .golive-node.is-hit .timeline-dot {
+            animation: st9-dot-hit 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+        }
+        #slide-9 .golive-node.is-glow .timeline-dot {
+            box-shadow: 0 0 22px rgba(14, 165, 233, 0.75), 0 0 36px rgba(16, 185, 129, 0.35);
+        }
+        #slide-9.golive-finished .golive-node.is-ready .timeline-dot {
+            animation: st9-final-pulse 0.65s cubic-bezier(0.45, 0, 0.55, 1);
+        }
+
+        #slide-9 .timeline-date {
+            display: inline-block;
+            font-size: 1.125rem;
+            font-weight: 800;
+            color: #0ea5e9;
+            font-family: inherit;
+            margin-bottom: 0.35rem;
+            padding: 0.15rem 0.45rem;
+            background: rgba(14, 165, 233, 0.1);
+            border-radius: 0.45rem;
+            line-height: 1.2;
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        #slide-9 .timeline-label {
+            font-size: 0.8125rem;
+            line-height: 1.3;
+            color: #f8fafc;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        #slide-9 .golive-node.is-date-visible .timeline-date {
+            animation: st9-fade-up 0.45s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+        }
+        #slide-9 .golive-node.is-label-visible .timeline-label {
+            animation: st9-fade-up 0.4s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+        }
+        @media (min-width: 768px) {
+            #slide-9 .timeline-date { font-size: 1.5rem; padding: 0.2rem 0.55rem; }
+            #slide-9 .timeline-label { font-size: 0.9375rem; }
+        }
+
+        #slide-9 .timeline-footer-note {
+            font-size: 0.9375rem !important;
+            line-height: 1.45rem !important;
+            opacity: 0;
+        }
+        #slide-9 .timeline-footer-note .fa-rocket {
+            display: inline-block;
+        }
+        #slide-9.golive-finished .timeline-footer-note {
+            animation: st9-fade-up 0.6s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+        }
+        #slide-9.golive-finished .timeline-footer-note .fa-rocket {
+            animation: st9-rocket-lift 0.85s cubic-bezier(0.45, 0, 0.55, 1) 0.35s;
+        }
+        @media (min-width: 768px) {
+            #slide-9 .timeline-footer-note { font-size: 1.0625rem !important; }
+        }
+
         .slide-hidden {
             display: none;
             opacity: 0;
@@ -261,6 +1116,77 @@
             background: #1e293b;
             border-radius: 10px;
         }
+
+        /* Slide viewport — normal flow; fullscreen scales inner canvas */
+        .slide-inner {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-origin: center center;
+        }
+
+        #slide-viewport:fullscreen,
+        #slide-viewport:-webkit-full-screen {
+            width: 100vw;
+            height: 100vh;
+            max-width: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #090d16;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #slide-viewport:fullscreen .slide-inner,
+        #slide-viewport:-webkit-full-screen .slide-inner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 1366px;
+            height: 768px;
+            flex-shrink: 0;
+        }
+
+        #slide-viewport:fullscreen .slide-inner .slide-container,
+        #slide-viewport:-webkit-full-screen .slide-inner .slide-container {
+            width: 1366px !important;
+            height: 768px !important;
+            max-width: none !important;
+            max-height: none !important;
+            aspect-ratio: auto !important;
+        }
+        #fullscreen-exit-btn {
+            display: none;
+            position: fixed;
+            top: 1.25rem;
+            left: 1.25rem;
+            z-index: 200;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 0.75rem;
+            background: rgba(19, 28, 49, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f8fafc;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        #fullscreen-exit-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #0ea5e9;
+        }
+        #slide-viewport:fullscreen #fullscreen-exit-btn,
+        #slide-viewport:-webkit-full-screen #fullscreen-exit-btn {
+            display: flex;
+        }
     </style>
 </head>
 <body class="text-brand-text min-h-screen flex flex-col justify-between p-4 md:p-6 font-sans">
@@ -281,12 +1207,17 @@
             <button onclick="toggleFullscreen()" class="p-2 rounded-lg bg-brand-dark hover:bg-white/5 text-brand-muted hover:text-brand-text border border-white/5 transition-colors" title="מסך מלא">
                 <i class="fa-solid fa-expand"></i>
             </button>
-            <div class="text-xs text-brand-muted font-mono" id="slide-index-indicator">שקופית 1 / 18</div>
+            <div class="text-xs text-brand-muted font-mono" id="slide-index-indicator">שקופית 1 / 22</div>
         </div>
     </header>
 
     <!-- SLIDE VIEWPORT -->
-    <main class="flex-grow w-full max-w-6xl mx-auto flex items-center justify-center relative my-2">
+    <main id="slide-viewport" class="fullscreen-slide-wrapper flex-grow w-full max-w-6xl mx-auto flex items-center justify-center relative my-2">
+        <button id="fullscreen-exit-btn" onclick="toggleFullscreen()" type="button" title="יציאה ממסך מלא" aria-label="יציאה ממסך מלא">
+            <i class="fa-solid fa-compress"></i>
+        </button>
+
+        <div class="slide-inner">
         
         <!-- ================= TOPIC 1: הקצאת תעודת זהות ================= -->
         
@@ -342,61 +1273,106 @@
             </div>
         </div>
 
-        <!-- Slide 3: אג'נדה -->
+        <!-- Slide 3: הדוברים המרכזיים -->
         <div id="slide-3" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
-            <div class="flex flex-col flex-grow">
-                <div class="text-right mb-6">
-                    <span class="text-sm font-bold text-brand-primary tracking-widest">אג'נדה ומבנה המפגש</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">על מה נדבר היום?</h2>
+            <div class="flex flex-col flex-grow min-h-0">
+                <div class="text-right mb-6 flex-shrink-0">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">הדוברים המרכזיים</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-                    <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-right">
-                        <div class="w-10 h-10 rounded-lg bg-brand-primary/15 text-brand-primary flex items-center justify-center text-lg mb-3">
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-photo-circle">
+                            <div class="team-photo-placeholder">
+                                <i class="fa-solid fa-user text-4xl text-brand-primary/25"></i>
+                            </div>
+                            <img src="./Raz.jpeg" alt="רז ברקוביץ'" class="team-photo" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="team-name">רז ברקוביץ'</h3>
+                        <p class="team-role">מיישם ומנהל פרויקטים</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo-circle">
+                            <div class="team-photo-placeholder">
+                                <i class="fa-solid fa-user text-4xl text-brand-secondary/25"></i>
+                            </div>
+                            <img src="./Nofar.jpeg" alt="נופר אברהם נתן" class="team-photo" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="team-name">נופר אברהם נתן</h3>
+                        <p class="team-role">מנתחת מערכות מידע</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-photo-circle">
+                            <div class="team-photo-placeholder">
+                                <i class="fa-solid fa-user text-4xl text-brand-accent/25"></i>
+                            </div>
+                            <img src="./Anna.jpeg" alt="אנה סבג" class="team-photo" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+                        </div>
+                        <h3 class="team-name">אנה סבג</h3>
+                        <p class="team-role">מיישמת ומנהלת פרויקטים</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
+                <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
+                <div class="flex items-center gap-3">
+                    <span>הדוברים המרכזיים</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: אג'נדה -->
+        <div id="slide-4" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="agenda-body">
+                <div class="agenda-header">
+                    <span class="agenda-eyebrow">אג'נדה ומבנה המפגש</span>
+                    <h2 class="agenda-title">על מה נדבר היום?</h2>
+                </div>
+
+                <div class="agenda-grid">
+                    <div class="agenda-card">
+                        <div class="agenda-icon agenda-icon--primary">
                             <i class="fa-solid fa-building"></i>
                         </div>
-                        <h3 class="font-bold text-white mb-2">מי אנחנו</h3>
-                        <p class="text-sm text-brand-muted leading-relaxed">חטיבת המרכזים הרפואיים הממשלתיים המנהיגה את הטרנספורמציה הדיגיטלית.</p>
+                        <h3 class="agenda-card-title">מי אנחנו</h3>
                     </div>
 
-                    <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-right">
-                        <div class="w-10 h-10 rounded-lg bg-brand-accent/15 text-brand-accent flex items-center justify-center text-lg mb-3">
+                    <div class="agenda-card">
+                        <div class="agenda-icon agenda-icon--accent">
                             <i class="fa-solid fa-list-ul"></i>
                         </div>
-                        <h3 class="font-bold text-white mb-2">פרויקט לידות</h3>
-                        <p class="text-sm text-brand-muted leading-relaxed">סקירה רחבה של שלבי הפרויקט החל מהאפיון ועד להטמעה בשטח.</p>
+                        <h3 class="agenda-card-title">פרויקט לידות</h3>
                     </div>
 
-                    <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-right">
-                        <div class="w-10 h-10 rounded-lg bg-brand-secondary/15 text-brand-secondary flex items-center justify-center text-lg mb-3">
+                    <div class="agenda-card">
+                        <div class="agenda-icon agenda-icon--secondary">
                             <i class="fa-solid fa-circle-info"></i>
                         </div>
-                        <h3 class="font-bold text-white mb-2">תיאור הפתרון</h3>
-                        <p class="text-sm text-brand-muted leading-relaxed">הקצאת תעודת זהות, הודעות לידה דיגיטליות ושידור המידע מול רשויות המדינה.</p>
+                        <h3 class="agenda-card-title">תיאור הפתרון</h3>
                     </div>
 
-                    <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-right">
-                        <div class="w-10 h-10 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center text-lg mb-3">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
-                        <h3 class="font-bold text-white mb-2">קצת מספרים</h3>
-                        <p class="text-sm text-brand-muted leading-relaxed">מדדי הצלחה בשטח, זמני שידור, אחוזי שביעות רצון והישגי הפרויקט הדיגיטלי.</p>
-                    </div>
-
-                    <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-right">
-                        <div class="w-10 h-10 rounded-lg bg-sky-500/15 text-sky-400 flex items-center justify-center text-lg mb-3">
-                            <i class="fa-solid fa-arrow-trend-up"></i>
-                        </div>
-                        <h3 class="font-bold text-white mb-2">שיפורים ושינויים</h3>
-                        <p class="text-sm text-brand-muted leading-relaxed">התייעלות ושדרוגים שבוצעו לאחר העלייה לאוויר בהתאם לצרכי השטח והמשתמשים.</p>
-                    </div>
-
-                    <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-right">
-                        <div class="w-10 h-10 rounded-lg bg-red-500/15 text-red-400 flex items-center justify-center text-lg mb-3">
+                    <div class="agenda-card">
+                        <div class="agenda-icon agenda-icon--red">
                             <i class="fa-solid fa-triangle-exclamation"></i>
                         </div>
-                        <h3 class="font-bold text-white mb-2">אתגרים</h3>
-                        <p class="text-sm text-brand-muted leading-relaxed">ניהול חריגים, שגיאות תקשורת והתגברות על חסמים תפעוליים וטכנולוגיים.</p>
+                        <h3 class="agenda-card-title">אתגרים</h3>
+                    </div>
+
+                    <div class="agenda-card">
+                        <div class="agenda-icon agenda-icon--sky">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <h3 class="agenda-card-title">שיפורים ושינויים</h3>
+                    </div>
+
+                    <div class="agenda-card">
+                        <div class="agenda-icon agenda-icon--amber">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+                        <h3 class="agenda-card-title">קצת מספרים</h3>
                     </div>
                 </div>
             </div>
@@ -409,14 +1385,14 @@
             </div>
         </div>
 
-        <!-- Slide 4: מי אנחנו -->
-        <div id="slide-4" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <!-- Slide 5: מי אנחנו — חטיבה -->
+        <div id="slide-5" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div class="flex flex-col flex-grow min-h-0">
                 <div class="text-right mb-4 flex-shrink-0">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-white">מי אנחנו?</h2>
                 </div>
                 <div class="w-full flex-1 min-h-0 flex items-center justify-center">
-                    <img src="./Hativa.png" alt="חטיבת המרכזים הרפואיים הממשלתיים" class="max-w-full max-h-full object-contain rounded-2xl" id="slide-4-hativa-image">
+                    <img src="./Hativa.png" alt="חטיבת המרכזים הרפואיים הממשלתיים" class="max-w-full max-h-full object-contain rounded-2xl" id="slide-5-hativa-image">
                 </div>
             </div>
 
@@ -429,11 +1405,53 @@
         </div>
 
         <!-- Slide 5: תכנון הפרויקט -->
-        <div id="slide-5" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
-            <div class="flex flex-col flex-grow justify-center items-center text-center">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white">
-                    תכנון הפרויקט
-                </h2>
+        <div id="slide-6" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="flex flex-col flex-grow min-h-0">
+                <div class="text-right mb-6 flex-shrink-0">
+                    <span class="text-sm font-bold text-brand-primary tracking-widest">תכנון הפרויקט</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">עקרונות מנחים בתהליך האפיון</h2>
+                </div>
+
+                <div class="flex flex-col gap-4 md:gap-5 flex-grow justify-center">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5">
+                        <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-brand-primary/15 text-brand-primary flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <h3 class="font-bold text-white">תאימות רגולטורית</h3>
+                        </div>
+
+                        <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-brand-secondary/15 text-brand-secondary flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                            <h3 class="font-bold text-white">חווית משתמש</h3>
+                        </div>
+
+                        <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-sky-500/15 text-sky-400 flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </div>
+                            <h3 class="font-bold text-white">אינטגרציה מערכתית</h3>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 max-w-2xl mx-auto w-full">
+                        <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-brand-accent/15 text-brand-accent flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <h3 class="font-bold text-white">אוטומציה מלאה</h3>
+                        </div>
+
+                        <div class="p-5 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="font-bold text-white">ניהול סיכונים</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
@@ -444,12 +1462,140 @@
             </div>
         </div>
 
-        <!-- Slide 6: לו"ז הפרויקט -->
-        <div id="slide-6" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
-            <div class="flex flex-col flex-grow justify-center items-center text-center">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white">
-                    לו"ז הפרויקט
-                </h2>
+        <!-- Slide 6: צוותים שותפים -->
+        <div id="slide-7" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="flex flex-col flex-grow min-h-0">
+                <div class="text-right mb-5 flex-shrink-0">
+                    <span class="text-sm font-bold text-brand-primary tracking-widest">תכנון הפרויקט</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1">צוותים שותפים</h2>
+                </div>
+
+                <div class="flex flex-col gap-3 md:gap-4 flex-grow justify-center">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
+                        <div class="p-4 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-brand-primary/15 text-brand-primary flex items-center justify-center text-lg mb-2">
+                                <i class="fa-solid fa-diagram-project"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-sm md:text-base">צוות ניתוח מערכות</h3>
+                        </div>
+
+                        <div class="p-4 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-brand-secondary/15 text-brand-secondary flex items-center justify-center text-lg mb-2">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-sm md:text-base">צוות יישום נמ"ר</h3>
+                        </div>
+
+                        <div class="p-4 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-brand-accent/15 text-brand-accent flex items-center justify-center text-lg mb-2">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-sm md:text-base">צוות אינטגרציה</h3>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
+                        <div class="p-4 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-sky-500/15 text-sky-400 flex items-center justify-center text-lg mb-2">
+                                <i class="fa-solid fa-stethoscope"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-sm md:text-base">צוות יישומים קליניים</h3>
+                        </div>
+
+                        <div class="p-4 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center text-lg mb-2">
+                                <i class="fa-solid fa-laptop-medical"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-sm md:text-base">צוות דיגיטל</h3>
+                        </div>
+
+                        <div class="p-4 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-violet-500/15 text-violet-400 flex items-center justify-center text-lg mb-2">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-sm md:text-base leading-snug">משרד הבריאות \ רשות האוכלוסין</h3>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center max-w-2xl mx-auto w-full">
+                        <div class="w-10 h-10 rounded-lg bg-red-500/15 text-red-400 flex items-center justify-center text-lg mb-2">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-sm md:text-base leading-snug">צוותי ניהול סיכונים בחטיבה ובמרכזים הרפואיים</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
+                <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
+                <div class="flex items-center gap-3">
+                    <span>צוותים שותפים</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: לו"ז הפרויקט -->
+        <div id="slide-8" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="flex flex-col flex-grow min-h-0 overflow-hidden">
+                <header class="st8-header st8-anim-header">
+                    <p class="st8-eyebrow">תכנון הפרויקט</p>
+                    <h2 class="st8-title">לו"ז הפרויקט</h2>
+                </header>
+
+                <div class="premium-timeline">
+                    <div class="premium-timeline__track">
+                        <div class="premium-timeline__line">
+                            <div class="premium-timeline__line-glow"></div>
+                        </div>
+                        <div class="premium-timeline__stations">
+                            <div class="premium-timeline__station">
+                                <div class="premium-timeline__node premium-timeline__node--primary">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </div>
+                                <h3 class="station-title">ייזום ואפיון</h3>
+                                <p class="station-period">מאי–יולי</p>
+                            </div>
+                            <div class="premium-timeline__station">
+                                <div class="premium-timeline__node premium-timeline__node--secondary">
+                                    <i class="fa-solid fa-gears"></i>
+                                </div>
+                                <h3 class="station-title">פיתוח ובדיקות</h3>
+                                <p class="station-period">ספטמבר–נובמבר</p>
+                            </div>
+                            <div class="premium-timeline__station">
+                                <div class="premium-timeline__node premium-timeline__node--accent">
+                                    <i class="fa-solid fa-rocket"></i>
+                                </div>
+                                <h3 class="station-title">Go Live</h3>
+                                <p class="station-period">דצמבר</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="premium-timeline__details">
+                        <div class="premium-timeline__detail">
+                            <ul class="station-list">
+                                <li>איסוף דרישות</li>
+                                <li>אפיון התהליך</li>
+                                <li>תכנון הפתרון</li>
+                            </ul>
+                        </div>
+                        <div class="premium-timeline__detail">
+                            <ul class="station-list">
+                                <li>פיתוח המערכת</li>
+                                <li>אינטגרציות וממשקים</li>
+                                <li>בדיקות מערכת</li>
+                            </ul>
+                        </div>
+                        <div class="premium-timeline__detail">
+                            <ul class="station-list">
+                                <li>עלייה לאוויר</li>
+                                <li>הדרכות משתמשים</li>
+                                <li>תמיכה וייצוב</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
@@ -460,11 +1606,99 @@
             </div>
         </div>
 
-        <!-- Slide 7: שקופית פתיחה נושא 1 -->
-        <div id="slide-7" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <!-- Slide 9: לוח העליות לאוויר -->
+        <div id="slide-9" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="flex flex-col flex-grow min-h-0 justify-center">
+                <header class="golive-header">
+                    <h2 class="golive-title">לוח העליות לאוויר <span class="text-brand-secondary">(דצמבר)</span></h2>
+                    <p class="golive-eyebrow">תכנון הפרויקט</p>
+                </header>
+
+                <div class="golive-timeline flex flex-col gap-8 md:gap-10 flex-grow justify-center">
+                    <div class="golive-row" data-golive-row>
+                        <div class="golive-line-track">
+                            <div class="golive-line-bg"></div>
+                            <div class="golive-line-fill"></div>
+                        </div>
+                        <div class="golive-nodes golive-nodes--five">
+                            <div class="golive-node">
+                                <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                                <div class="timeline-date">07/12</div>
+                                <div class="timeline-label">אסף הרופא<br>(שמיר)</div>
+                            </div>
+                            <div class="golive-node">
+                                <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                                <div class="timeline-date">10/12</div>
+                                <div class="timeline-label">וולפסון</div>
+                            </div>
+                            <div class="golive-node">
+                                <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                                <div class="timeline-date">14/12</div>
+                                <div class="timeline-label">בני ציון</div>
+                            </div>
+                            <div class="golive-node">
+                                <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                                <div class="timeline-date">15/12</div>
+                                <div class="timeline-label">המרכז הרפואי<br>לגליל</div>
+                            </div>
+                            <div class="golive-node">
+                                <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                                <div class="timeline-date">17/12</div>
+                                <div class="timeline-label">הלל יפה</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="golive-row golive-row--second" data-golive-row>
+                        <div class="golive-line-track">
+                            <div class="golive-line-bg"></div>
+                            <div class="golive-line-fill"></div>
+                        </div>
+                        <div class="golive-nodes golive-nodes--four">
+                            <div class="golive-node">
+                                <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                                <div class="timeline-date">22/12</div>
+                                <div class="timeline-label">ברזילי</div>
+                            </div>
+                            <div class="golive-node">
+                                <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                                <div class="timeline-date">24/12</div>
+                                <div class="timeline-label">פוריה<br>(צפון)</div>
+                            </div>
+                            <div class="golive-node">
+                                <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                                <div class="timeline-date">28/12</div>
+                                <div class="timeline-label">זיו</div>
+                            </div>
+                            <div class="golive-node">
+                                <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                                <div class="timeline-date">30/12</div>
+                                <div class="timeline-label">רמב"ם</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-center text-brand-muted mt-6 timeline-footer-note">
+                    <i class="fa-solid fa-rocket text-brand-secondary ml-1"></i>
+                    פריסה ארצית מלאה תוך פחות מחודש — החל מ-1/1 כל המרכזים עובדים עם הממשק החדש
+                </p>
+            </div>
+
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
+                <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
+                <div class="flex items-center gap-3">
+                    <span>לוח העליות לאוויר</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: שקופית פתיחה נושא 1 -->
+        <div id="slide-10" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div class="absolute inset-0 bg-radial-gradient from-brand-primary/5 via-transparent to-transparent pointer-events-none"></div>
             
-            <div class="my-auto max-w-3xl mx-auto text-center space-y-6">
+            <div class="flex flex-col flex-grow justify-center items-center text-center w-full min-h-0">
+                <div class="max-w-3xl mx-auto space-y-6">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-bold border border-brand-primary/20">
                     <i class="fa-solid fa-star-of-life animate-spin-slow"></i> נושא 1: הקצאת תעודת זהות לילוד
                 </span>
@@ -474,6 +1708,7 @@
                 <p class="text-lg text-brand-muted max-w-2xl mx-auto">
                     שדרוג מקצועי של ממשקי העבודה האוטומטיים בין המערכת הקלינית בחדר הלידה, מרשם האוכלוסין ומערכת נמ"ר.
                 </p>
+                </div>
             </div>
             
             <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
@@ -485,7 +1720,7 @@
         </div>
 
         <!-- Slide 8: זרימת ננתונים ארכיטקטונית -->
-        <div id="slide-8" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <div id="slide-11" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div>
                 <span class="text-xs font-bold text-brand-primary tracking-widest uppercase">נושא 1: הקצאת ת"ז</span>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-8">
@@ -534,13 +1769,89 @@
             </div>
         </div>
 
+        <!-- Slide 12: הקצאת תעודת זהות יזומה -->
+        <div id="slide-12" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="proactive-flow-body">
+                <div class="proactive-flow-header">
+                    <span class="proactive-flow-eyebrow">נושא 1: הקצאת ת"ז</span>
+                    <h2 class="proactive-flow-title">הקצאת תעודת זהות יזומה</h2>
+                    <p class="proactive-flow-subtitle">מענה במקרה של כשל בממשק</p>
+                </div>
+
+                <div class="proactive-flow-chain">
+                    <div class="proactive-step">
+                        <div class="proactive-step-icon proactive-step-icon--warning">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="proactive-step-content">
+                            <h3 class="proactive-step-title">כשל בממשק</h3>
+                            <p class="proactive-step-text">העברת פרטי היילוד ממערכת קמיליון לנמ"ר נכשלה, ולכן לא בוצעה הקצאת תעודת זהות באופן אוטומטי.</p>
+                        </div>
+                    </div>
+
+                    <div class="proactive-arrow" aria-hidden="true">
+                        <div class="proactive-arrow-line"></div>
+                        <i class="fa-solid fa-chevron-down proactive-arrow-head"></i>
+                    </div>
+
+                    <div class="proactive-step">
+                        <div class="proactive-step-icon proactive-step-icon--send">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </div>
+                        <div class="proactive-step-content">
+                            <h3 class="proactive-step-title">יצירת פנייה יזומה</h3>
+                            <p class="proactive-step-text">ניתן ליצור מתוך מערכת נמ"ר פנייה יזומה לשירות הקצאת תעודת הזהות.</p>
+                        </div>
+                    </div>
+
+                    <div class="proactive-arrow" aria-hidden="true">
+                        <div class="proactive-arrow-line"></div>
+                        <i class="fa-solid fa-chevron-down proactive-arrow-head"></i>
+                    </div>
+
+                    <div class="proactive-step">
+                        <div class="proactive-step-icon proactive-step-icon--check">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div class="proactive-step-content">
+                            <h3 class="proactive-step-title">בדיקת זכאות</h3>
+                            <p class="proactive-step-text">משרד הבריאות ורשות האוכלוסין מבצעים את כלל הבדיקות והלוגיקות הנדרשות כדי לקבוע האם הילוד זכאי להקצאת תעודת זהות.</p>
+                        </div>
+                    </div>
+
+                    <div class="proactive-arrow" aria-hidden="true">
+                        <div class="proactive-arrow-line"></div>
+                        <i class="fa-solid fa-chevron-down proactive-arrow-head"></i>
+                    </div>
+
+                    <div class="proactive-step">
+                        <div class="proactive-step-icon proactive-step-icon--result">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="proactive-step-content">
+                            <h3 class="proactive-step-title">קבלת תוצאה</h3>
+                            <p class="proactive-step-text">בסיום הבדיקה מוחזרת תשובה למערכת, ובהתאם לתוצאה מוקצית תעודת הזהות או מתקבלת הודעה מתאימה.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
+                <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
+                <div class="flex items-center gap-3">
+                    <span>הקצאה יזומה</span>
+                </div>
+            </div>
+        </div>
+
         <!-- ================= TOPIC 2: הודעת לידה ================= -->
         
         <!-- Slide 9: שקופית פתיחה נושא 2 -->
-        <div id="slide-9" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <div id="slide-13" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-bl from-brand-accent/5 via-transparent to-transparent pointer-events-none"></div>
             
-            <div class="my-auto max-w-3xl mx-auto text-center space-y-6">
+            <div class="flex flex-col flex-grow justify-center items-center text-center w-full min-h-0 relative z-10">
+                <div class="max-w-3xl mx-auto space-y-6">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-accent/10 text-brand-accent text-sm font-bold border border-brand-accent/20">
                     <i class="fa-solid fa-baby"></i> נושא 2: הודעת לידה
                 </span>
@@ -550,6 +1861,7 @@
                 <p class="text-lg text-brand-muted max-w-2xl mx-auto">
                     מעבר לאוטומציה מלאה וביטול הניירת
                 </p>
+                </div>
             </div>
             
             <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
@@ -561,14 +1873,14 @@
         </div>
 
         <!-- Slide 10: הודעת לידה - המהפכה האוטומטית (Before vs After) -->
-        <div id="slide-10" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
-            <div>
-                <span class="text-xs font-bold text-brand-accent tracking-widest uppercase">נושא 2: הודעת לידה</span>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-6">
+        <div id="slide-14" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="flex flex-col flex-grow min-h-0">
+                <span class="text-xs font-bold text-brand-accent tracking-widest uppercase flex-shrink-0">נושא 2: הודעת לידה</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-6 flex-shrink-0">
                     מהפכת הודעות הלידה: <span class="text-brand-accent">מעבר לאוטומציה מלאה וביטול הניירת</span>
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto flex-1 min-h-0 content-center">
                     <!-- Before Card -->
                     <div class="p-6 bg-red-950/10 rounded-2xl border border-red-500/20 relative">
                         <div class="absolute top-4 left-4 text-red-500/30 text-4xl font-extrabold font-mono">בעבר</div>
@@ -597,6 +1909,16 @@
                         </ul>
                     </div>
                 </div>
+
+                <div class="slide-info-note">
+                    <div class="slide-info-note-icon" aria-hidden="true">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <p class="slide-info-note-text">
+                        <strong>הערה:</strong>
+                        יכולת זו לא נכללה במסגרת מבחן התמיכה המקורי. עם זאת, הוחלט לפתח אותה כחלק מהפרויקט במטרה לייעל את התהליך העסקי.
+                    </p>
+                </div>
             </div>
             
             <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
@@ -608,7 +1930,7 @@
         </div>
 
         <!-- Slide 11: הודעת לידה - הכל במקום אחד (Suite of Forms) -->
-        <div id="slide-11" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <div id="slide-15" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div>
                 <span class="text-xs font-bold text-brand-accent tracking-widest uppercase">נושא 2: הודעת לידה</span>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-brand-accent mt-1 mb-4">
@@ -675,7 +1997,7 @@
         </div>
 
         <!-- Slide 12: הודעת לידה - יכולות חכמות ומהירות (Smart features) -->
-        <div id="slide-12" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <div id="slide-16" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div>
                 <span class="text-xs font-bold text-brand-accent tracking-widest uppercase">נושא 2: הודעת לידה</span>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-6">
@@ -721,10 +2043,11 @@
         <!-- ================= TOPIC 3: דיווח לידה ================= -->
         
         <!-- Slide 13: שקופית פתיחה נושא 3 -->
-        <div id="slide-13" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <div id="slide-17" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-bl from-brand-secondary/5 via-transparent to-transparent pointer-events-none"></div>
             
-            <div class="my-auto max-w-3xl mx-auto text-center space-y-6">
+            <div class="flex flex-col flex-grow justify-center items-center text-center w-full min-h-0">
+                <div class="max-w-3xl mx-auto space-y-6">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-secondary/10 text-brand-secondary text-sm font-bold border border-brand-secondary/20">
                     <i class="fa-solid fa-paper-plane"></i> נושא 3: דיווח לידה
                 </span>
@@ -734,6 +2057,7 @@
                 <p class="text-lg text-brand-muted max-w-2xl mx-auto">
                     שידור פרטי הלידה למרשם האוכלוסין באפס מאמץ
                 </p>
+                </div>
             </div>
             
             <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
@@ -745,15 +2069,15 @@
         </div>
 
         <!-- Slide 14: דיווח לידה - שידור מהיר בלחיצת כפתור -->
-        <div id="slide-14" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
-            <div>
-                <span class="text-xs font-bold text-brand-secondary tracking-widest uppercase">נושא 3: דיווח לידה</span>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-6">
+        <div id="slide-18" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div class="flex flex-col flex-grow min-h-0">
+                <span class="text-xs font-bold text-brand-secondary tracking-widest uppercase flex-shrink-0">נושא 3: דיווח לידה</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-6 flex-shrink-0">
                     שידור המידע למרשם: <span class="text-brand-secondary">אפס מאמץ, מקסימום אמינות</span>
                 </h2>
                 
-                <div class="grid grid-cols-1 gap-6 my-auto">
-                    <div class="space-y-6 max-w-5xl">
+                <div class="grid grid-cols-1 gap-6 my-auto flex-1 min-h-0 content-center">
+                    <div class="space-y-6 max-w-5xl w-full">
                         <div class="p-6 bg-brand-dark/40 rounded-2xl border border-white/5 flex gap-5 items-start">
                             <div class="w-12 h-12 rounded-xl bg-brand-secondary/10 text-brand-secondary flex items-center justify-center text-xl shrink-0">
                                 <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -770,7 +2094,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white text-lg md:text-xl mb-2">אפשרות לשליחה יזומה</h4>
-                                <p class="text-sm md:text-base text-brand-muted leading-relaxed">צריכים לשלוח ידנית? בסביבת העבודה NWP1 (מבט "ילודים"), מסמנים את הילוד הרלוונטי ולוחצים על כפתור <strong>"דיווח לידה"</strong> בלחיצה פשוטה אחת.</p>
+                                <p class="text-sm md:text-base text-brand-muted leading-relaxed">צריכים לשלוח ידנית? בסביבת העבודה מסמנים את הילוד הרלוונטי ולוחצים על כפתור <strong>"דיווח לידה"</strong> בלחיצה פשוטה אחת.</p>
                             </div>
                         </div>
 
@@ -796,7 +2120,7 @@
         </div>
 
         <!-- Slide 15: אתגרים בפרויקט -->
-        <div id="slide-15" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <div id="slide-19" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div>
                 <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1 mb-8">
                     אתגרים בפרויקט
@@ -832,6 +2156,16 @@
                             <p class="text-sm md:text-base text-brand-muted leading-relaxed">היערכות מבחינה לוגיסטית של בתי החולים לצורך יישום מלא של התהליך.</p>
                         </div>
                     </div>
+
+                    <div class="p-6 bg-brand-dark/40 rounded-2xl border border-white/5 flex gap-5 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg md:text-xl mb-2">פרויקטים מקבילים</h4>
+                            <p class="text-sm md:text-base text-brand-muted leading-relaxed">פיתוח ועלייה לאוויר במקביל לפרויקט נמ"ר מזו"ר שיבא.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -844,7 +2178,7 @@
         </div>
 
         <!-- Slide 16: שינויים ושיפורים -->
-        <div id="slide-16" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <div id="slide-20" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div>
                 <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-1 mb-6">
                     שינויים ושיפורים
@@ -889,7 +2223,7 @@
         </div>
 
         <!-- Slide 17: קצת מספרים -->
-        <div id="slide-17" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <div id="slide-21" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div class="absolute inset-0 bg-radial-gradient from-brand-primary/5 via-transparent to-transparent pointer-events-none"></div>
 
             <div class="flex flex-col flex-grow justify-center items-center text-center space-y-8 my-auto">
@@ -914,14 +2248,14 @@
             </div>
         </div>
 
-        <!-- Slide 18: תודה רבה -->
-        <div id="slide-18" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <!-- Slide 20: שאלות -->
+        <div id="slide-22" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-bl from-brand-primary/10 via-transparent to-brand-secondary/10 pointer-events-none"></div>
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-l from-brand-secondary/20 to-brand-primary/20 blur-3xl pointer-events-none"></div>
 
             <div class="flex flex-col flex-grow justify-center items-center text-center relative z-10">
                 <h2 class="thanks-title font-extrabold tracking-tight">
-                    תודה רבה
+                    שאלות?
                 </h2>
                 <div class="thanks-underline h-2 w-40 md:w-56 rounded-full mt-10 shadow-lg shadow-brand-primary/30"></div>
             </div>
@@ -929,11 +2263,12 @@
             <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
                 <div>תהליך לידות חדש | מערכת <span class="text-brand-primary font-bold">נמ"ר</span></div>
                 <div class="flex items-center gap-3">
-                    <span>סיום</span>
+                    <span>שאלות?</span>
                 </div>
             </div>
         </div>
 
+        </div>
     </main>
 
     <!-- PLAYBAR & FOOTER CONTROLS -->
@@ -968,7 +2303,7 @@
     <!-- SLIDE INTERACTIVE SCRIPT -->
     <script>
         let currentSlide = 1;
-        const totalSlides = 18;
+        const totalSlides = 22;
         
         // Render bullet indicators on load
         function renderBullets() {
@@ -980,6 +2315,91 @@
                 bullet.onclick = () => showSlide(i);
                 container.appendChild(bullet);
             }
+        }
+
+        let goliveAnimationToken = 0;
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function resetGoliveSlide(slide) {
+            slide.classList.remove('golive-playing', 'golive-finished');
+            slide.querySelectorAll('.golive-title, .golive-eyebrow, .timeline-date, .timeline-label, .timeline-footer-note').forEach(el => {
+                el.style.animation = 'none';
+                el.style.opacity = '0';
+                el.style.transform = '';
+                void el.offsetWidth;
+                el.style.animation = '';
+                el.style.opacity = '';
+                el.style.transform = '';
+            });
+            slide.querySelectorAll('[data-golive-row]').forEach(row => {
+                const fill = row.querySelector('.golive-line-fill');
+                if (fill) {
+                    fill.style.transition = 'none';
+                    fill.style.width = '0%';
+                    void fill.offsetWidth;
+                    fill.style.transition = '';
+                }
+            });
+            slide.querySelectorAll('.golive-node').forEach(node => {
+                node.classList.remove('is-ready', 'is-hit', 'is-glow', 'is-date-visible', 'is-label-visible');
+            });
+        }
+
+        async function animateGoliveNode(node) {
+            node.classList.add('is-ready');
+            await sleep(80);
+            node.classList.add('is-hit');
+            await sleep(200);
+            node.classList.remove('is-hit');
+            node.classList.add('is-glow');
+            await sleep(120);
+            node.classList.add('is-date-visible');
+            await sleep(220);
+            node.classList.add('is-label-visible');
+            await sleep(180);
+            node.classList.remove('is-glow');
+        }
+
+        async function animateGoliveRow(row, token) {
+            const nodes = row.querySelectorAll('.golive-node');
+            const fill = row.querySelector('.golive-line-fill');
+            const count = nodes.length;
+            if (!count || !fill) return;
+
+            for (let i = 0; i < count; i++) {
+                if (token !== goliveAnimationToken) return;
+                const progress = ((i + 1) / count) * 100;
+                fill.style.width = progress + '%';
+                await sleep(480);
+                if (token !== goliveAnimationToken) return;
+                await animateGoliveNode(nodes[i]);
+            }
+        }
+
+        async function playGoliveAnimation() {
+            const slide = document.getElementById('slide-9');
+            if (!slide) return;
+
+            const token = ++goliveAnimationToken;
+            resetGoliveSlide(slide);
+            void slide.offsetWidth;
+            slide.classList.add('golive-playing');
+
+            await sleep(900);
+            if (token !== goliveAnimationToken) return;
+
+            const rows = slide.querySelectorAll('[data-golive-row]');
+            for (const row of rows) {
+                if (token !== goliveAnimationToken) return;
+                await animateGoliveRow(row, token);
+                await sleep(120);
+            }
+
+            if (token !== goliveAnimationToken) return;
+            slide.classList.add('golive-finished');
         }
 
         // Show a specific slide
@@ -1002,6 +2422,34 @@
             
             // Update text indicator
             document.getElementById('slide-index-indicator').innerText = `שקופית ${currentSlide} / ${totalSlides}`;
+
+            // Replay slide 8 timeline animation
+            const slide8 = document.getElementById('slide-8');
+            if (slide8) {
+                slide8.classList.remove('timeline-replay');
+                if (slideIndex === 8) {
+                    void slide8.offsetWidth;
+                    slide8.classList.add('timeline-replay');
+                }
+            }
+
+            // Replay slide 9 go-live cinematic animation
+            goliveAnimationToken++;
+            const slide9 = document.getElementById('slide-9');
+            if (slide9) resetGoliveSlide(slide9);
+            if (slideIndex === 9) playGoliveAnimation();
+
+            // Replay slide 12 proactive ID flow animation
+            const slide12 = document.getElementById('slide-12');
+            if (slide12) {
+                slide12.classList.remove('proactive-flow-replay');
+                if (slideIndex === 12) {
+                    void slide12.offsetWidth;
+                    slide12.classList.add('proactive-flow-replay');
+                }
+            }
+
+            scheduleSlideScale();
         }
 
         function nextSlide() {
@@ -1033,23 +2481,89 @@
             }
         });
 
-        // Toggle Fullscreen view of presentation area
+        function getFullscreenElement() {
+            return document.fullscreenElement || document.webkitFullscreenElement;
+        }
+
+        const BASE_WIDTH = 1366;
+        const BASE_HEIGHT = 768;
+
+        function updateSlideScale() {
+            const viewport = document.getElementById('slide-viewport');
+            const slideInner = document.querySelector('.slide-inner');
+            if (!viewport || !slideInner) return;
+
+            const isFullscreen = getFullscreenElement() === viewport;
+            if (!isFullscreen) {
+                slideInner.style.transform = '';
+                return;
+            }
+
+            const rect = viewport.getBoundingClientRect();
+            const w = rect.width;
+            const h = rect.height;
+            if (w <= 0 || h <= 0) return;
+
+            const scale = Math.min(w / BASE_WIDTH, h / BASE_HEIGHT);
+            slideInner.style.transform = `translate(-50%, -50%) scale(${scale})`;
+            slideInner.style.transformOrigin = 'center center';
+        }
+
+        function scheduleSlideScale() {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(updateSlideScale);
+            });
+        }
+
+        // Toggle Fullscreen — slide viewport only (not header/footer)
         function toggleFullscreen() {
-            const elem = document.documentElement;
-            if (!document.fullscreenElement) {
-                if (elem.requestFullscreen) {
-                    elem.requestFullscreen();
-                }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
+            const viewport = document.getElementById('slide-viewport');
+            if (!viewport) return;
+
+            if (getFullscreenElement() === viewport) {
+                if (document.exitFullscreen) document.exitFullscreen();
+                else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+            } else if (!getFullscreenElement()) {
+                const request = viewport.requestFullscreen
+                    ? viewport.requestFullscreen()
+                    : viewport.webkitRequestFullscreen
+                        ? viewport.webkitRequestFullscreen()
+                        : null;
+                if (request && request.then) {
+                    request.then(scheduleSlideScale).catch(scheduleSlideScale);
+                } else {
+                    scheduleSlideScale();
                 }
             }
         }
 
+        function updateFullscreenUi() {
+            const viewport = document.getElementById('slide-viewport');
+            const isSlideFullscreen = getFullscreenElement() === viewport;
+            const expandBtn = document.querySelector('header button[title="מסך מלא"]');
+            if (expandBtn) {
+                const icon = expandBtn.querySelector('i');
+                if (icon) icon.className = isSlideFullscreen ? 'fa-solid fa-compress' : 'fa-solid fa-expand';
+            }
+            scheduleSlideScale();
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenUi);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenUi);
+        window.addEventListener('resize', scheduleSlideScale);
+
         // Initialize view on load
         window.onload = function() {
             renderBullets();
+            scheduleSlideScale();
+            const viewport = document.getElementById('slide-viewport');
+            if (viewport && typeof ResizeObserver !== 'undefined') {
+                new ResizeObserver(scheduleSlideScale).observe(viewport);
+            }
+            if (currentSlide === 8) {
+                const slide8 = document.getElementById('slide-8');
+                if (slide8) slide8.classList.add('timeline-replay');
+            }
         };
     </script>
 </body>
