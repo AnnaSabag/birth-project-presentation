@@ -231,25 +231,25 @@
             flex-direction: column;
             flex: 1;
             min-height: 0;
-            gap: 0.625rem;
+            gap: 0.5rem;
         }
 
         #slide-12 .proactive-flow-header {
             flex-shrink: 0;
             text-align: right;
             opacity: 0;
-            margin-bottom: 0.125rem;
+            margin-bottom: 0;
         }
 
         #slide-12 .proactive-flow-eyebrow {
-            font-size: 0.75rem !important;
+            font-size: 0.85rem !important;
             font-weight: 700;
             letter-spacing: 0.08em;
             color: #38bdf8;
         }
 
         #slide-12 .proactive-flow-title {
-            font-size: 1.5rem !important;
+            font-size: 1.7rem !important;
             line-height: 1.25 !important;
             font-weight: 800;
             color: #f8fafc;
@@ -257,15 +257,15 @@
         }
 
         #slide-12 .proactive-flow-subtitle {
-            font-size: 0.9375rem !important;
-            line-height: 1.4rem !important;
+            font-size: 1.05rem !important;
+            line-height: 1.45rem !important;
             color: #94a3b8;
             margin-top: 0.25rem;
         }
 
         @media (min-width: 768px) {
-            #slide-12 .proactive-flow-title { font-size: 1.875rem !important; }
-            #slide-12 .proactive-flow-subtitle { font-size: 1rem !important; }
+            #slide-12 .proactive-flow-title { font-size: 2.1rem !important; }
+            #slide-12 .proactive-flow-subtitle { font-size: 1.125rem !important; }
         }
 
         #slide-12 .proactive-flow-chain {
@@ -282,8 +282,8 @@
         #slide-12 .proactive-step {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1rem 1.25rem;
+            gap: 1.05rem;
+            padding: 1.05rem 1.3rem;
             min-height: 0;
             background: rgba(15, 23, 42, 0.55);
             border: 1px solid rgba(255, 255, 255, 0.06);
@@ -295,8 +295,8 @@
 
         @media (min-width: 768px) {
             #slide-12 .proactive-step {
-                padding: 1.125rem 1.5rem;
-                gap: 1.125rem;
+                padding: 1.2rem 1.55rem;
+                gap: 1.2rem;
                 border-radius: 1.125rem;
             }
         }
@@ -308,20 +308,20 @@
 
         #slide-12 .proactive-step-icon {
             flex-shrink: 0;
-            width: 2.75rem;
-            height: 2.75rem;
+            width: 3.1rem;
+            height: 3.1rem;
             border-radius: 0.875rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
+            font-size: 1.4rem;
         }
 
         @media (min-width: 768px) {
             #slide-12 .proactive-step-icon {
-                width: 3rem;
-                height: 3rem;
-                font-size: 1.375rem;
+                width: 3.375rem;
+                height: 3.375rem;
+                font-size: 1.55rem;
             }
         }
 
@@ -336,23 +336,23 @@
         }
 
         #slide-12 .proactive-step-title {
-            font-size: 1rem !important;
+            font-size: 1.125rem !important;
             line-height: 1.35 !important;
             font-weight: 800 !important;
             color: #f8fafc;
-            margin: 0 0 0.375rem !important;
+            margin: 0 0 0.35rem !important;
         }
 
         #slide-12 .proactive-step-text {
-            font-size: 0.875rem !important;
-            line-height: 1.5 !important;
+            font-size: 0.99rem !important;
+            line-height: 1.48 !important;
             color: #94a3b8;
             margin: 0;
         }
 
         @media (min-width: 768px) {
-            #slide-12 .proactive-step-title { font-size: 1.125rem !important; }
-            #slide-12 .proactive-step-text { font-size: 0.9375rem !important; line-height: 1.55 !important; }
+            #slide-12 .proactive-step-title { font-size: 1.27rem !important; }
+            #slide-12 .proactive-step-text { font-size: 1.05rem !important; line-height: 1.52 !important; }
         }
 
         #slide-12 .proactive-arrow {
@@ -360,7 +360,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 1.125rem;
+            height: 0.85rem;
             opacity: 0;
             transform: scaleY(0);
             transform-origin: top center;
@@ -368,15 +368,15 @@
 
         #slide-12 .proactive-arrow-line {
             width: 2px;
-            height: 0.5rem;
+            height: 0.375rem;
             background: linear-gradient(to bottom, rgba(56, 189, 248, 0.55), rgba(16, 185, 129, 0.55));
             border-radius: 999px;
         }
 
         #slide-12 .proactive-arrow-head {
-            font-size: 0.625rem;
+            font-size: 0.7rem;
             color: rgba(56, 189, 248, 0.7);
-            margin-top: 0.125rem;
+            margin-top: 0.1rem;
         }
 
         #slide-12.proactive-flow-replay .proactive-flow-header {
@@ -455,6 +455,109 @@
             }
         }
 
+        /* Slide 21 — "קצת מספרים" cinematic count-up */
+        @keyframes st21-fade-down {
+            from { opacity: 0; transform: translateY(-18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes st21-fade-up {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes st21-pulse {
+            0%, 100% { transform: scale(1); }
+            45% { transform: scale(1.05); }
+        }
+        @keyframes st21-glow {
+            0% { opacity: 0; transform: scale(0.92); }
+            35% { opacity: 0.85; transform: scale(1.08); }
+            100% { opacity: 0; transform: scale(1.18); }
+        }
+        @keyframes st21-particle-rise {
+            0% {
+                opacity: 0;
+                transform: translate(calc(-50% + var(--x, 0px)), 10px) scale(0.4);
+            }
+            18% { opacity: var(--peak, 0.55); }
+            100% {
+                opacity: 0;
+                transform: translate(calc(-50% + var(--x, 0px)), -72px) scale(0.15);
+            }
+        }
+
+        #slide-21 .st21-title {
+            opacity: 0;
+        }
+        #slide-21.st21-playing .st21-title {
+            animation: st21-fade-down 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        #slide-21 .st21-number {
+            position: relative;
+            opacity: 0;
+            font-variant-numeric: tabular-nums;
+            z-index: 1;
+        }
+        #slide-21.st21-counting .st21-number,
+        #slide-21.st21-count-done .st21-number,
+        #slide-21.st21-finished .st21-number {
+            opacity: 1;
+        }
+        #slide-21.st21-count-done .st21-number {
+            animation: st21-pulse 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        #slide-21.st21-count-done .st21-number::after {
+            content: '';
+            position: absolute;
+            inset: -28% -18%;
+            border-radius: 999px;
+            background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.38), rgba(16, 185, 129, 0.22) 45%, transparent 72%);
+            filter: blur(14px);
+            z-index: -1;
+            pointer-events: none;
+            animation: st21-glow 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        #slide-21 .st21-subtitle {
+            opacity: 0;
+            transform: translateY(14px);
+        }
+        #slide-21.st21-subtitle-visible .st21-subtitle {
+            animation: st21-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        #slide-21.st21-finished .st21-title,
+        #slide-21.st21-finished .st21-number,
+        #slide-21.st21-finished .st21-subtitle {
+            opacity: 1;
+            transform: none;
+        }
+
+        #slide-21 .st21-particle {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 4px;
+            height: 4px;
+            border-radius: 999px;
+            background: rgba(56, 189, 248, 0.75);
+            box-shadow: 0 0 8px rgba(14, 165, 233, 0.45);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0;
+            animation: st21-particle-rise var(--dur, 1.1s) cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) forwards;
+        }
+        #slide-21 .st21-particle:nth-child(3n) {
+            background: rgba(52, 211, 153, 0.7);
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+            --peak: 0.45;
+        }
+        #slide-21 .st21-particle:nth-child(3n+1) {
+            width: 3px;
+            height: 3px;
+            --peak: 0.35;
+        }
+
         /* Closing slide — large title with white → blue → green gradient */
         #slide-22 .thanks-title {
             font-size: 5rem !important;
@@ -522,6 +625,29 @@
             .slide-container .lg\:text-6xl { font-size: 5.23rem !important; line-height: 1.05 !important; }
         }
 
+        /* Slide 6 — guiding principles, +12.5% readability */
+        #slide-6 .text-sm { font-size: 1.32rem !important; line-height: 1.85rem !important; }
+        #slide-6 .text-lg { font-size: 1.7rem !important; line-height: 2.1rem !important; }
+        #slide-6 .text-3xl { font-size: 2.79rem !important; line-height: 2.95rem !important; }
+        #slide-6 .text-4xl { font-size: 3.41rem !important; line-height: 1.12 !important; }
+
+        @media (min-width: 768px) {
+            #slide-6 .md\:text-4xl { font-size: 3.71rem !important; line-height: 1.12 !important; }
+            #slide-6 .md\:gap-5 { gap: 1.35rem !important; }
+        }
+
+        #slide-6 h3 {
+            font-size: 1.47rem !important;
+            line-height: 1.65rem !important;
+        }
+
+        #slide-6 .mb-6 { margin-bottom: 1.35rem !important; }
+        #slide-6 .mb-3 { margin-bottom: 0.65rem !important; }
+        #slide-6 .gap-4 { gap: 1.45rem !important; }
+        #slide-6 .p-5 { padding: 2.1rem !important; }
+        #slide-6 .w-10 { width: 3.7rem !important; }
+        #slide-6 .h-10 { height: 3.7rem !important; }
+
         /* Slide 18 — compact layout, scaled with global bump */
         #slide-18 .text-xs { font-size: 0.85rem !important; line-height: 1.15rem !important; }
         #slide-18 .text-sm { font-size: 1rem !important; line-height: 1.4rem !important; }
@@ -546,6 +672,198 @@
         #slide-18 .h-12 { height: 4.1rem !important; }
         #slide-18 .bg-brand-dark\/40 .text-xl { font-size: 1.39rem !important; }
 
+        /* Slide 18 — fullscreen: scale inner content to fill the canvas */
+        #slide-viewport:fullscreen #slide-18,
+        #slide-viewport:-webkit-full-screen #slide-18 {
+            --st18: 1.26;
+            padding: 2rem 3rem 1.5rem !important;
+        }
+
+        #slide-viewport:fullscreen #slide-18 .st18-main,
+        #slide-viewport:-webkit-full-screen #slide-18 .st18-main {
+            justify-content: center;
+        }
+
+        #slide-viewport:fullscreen #slide-18 .st18-cards-wrap,
+        #slide-viewport:-webkit-full-screen #slide-18 .st18-cards-wrap {
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        #slide-viewport:fullscreen #slide-18 .text-xs,
+        #slide-viewport:-webkit-full-screen #slide-18 .text-xs {
+            font-size: calc(0.85rem * var(--st18)) !important;
+            line-height: calc(1.15rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .text-sm,
+        #slide-viewport:-webkit-full-screen #slide-18 .text-sm {
+            font-size: calc(1rem * var(--st18)) !important;
+            line-height: calc(1.4rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .text-base,
+        #slide-viewport:-webkit-full-screen #slide-18 .text-base {
+            font-size: calc(1.16rem * var(--st18)) !important;
+            line-height: calc(1.6rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .text-lg,
+        #slide-viewport:-webkit-full-screen #slide-18 .text-lg {
+            font-size: calc(1.23rem * var(--st18)) !important;
+            line-height: calc(1.7rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .text-xl,
+        #slide-viewport:-webkit-full-screen #slide-18 .text-xl {
+            font-size: calc(1.39rem * var(--st18)) !important;
+            line-height: calc(1.8rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .text-2xl,
+        #slide-viewport:-webkit-full-screen #slide-18 .text-2xl {
+            font-size: calc(1.66rem * var(--st18)) !important;
+            line-height: calc(2rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .text-3xl,
+        #slide-viewport:-webkit-full-screen #slide-18 .text-3xl {
+            font-size: calc(2.04rem * var(--st18)) !important;
+            line-height: calc(2.35rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .md\:text-base,
+        #slide-viewport:-webkit-full-screen #slide-18 .md\:text-base {
+            font-size: calc(1.16rem * var(--st18)) !important;
+            line-height: calc(1.6rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .md\:text-xl,
+        #slide-viewport:-webkit-full-screen #slide-18 .md\:text-xl {
+            font-size: calc(1.39rem * var(--st18)) !important;
+            line-height: calc(1.8rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .md\:text-3xl,
+        #slide-viewport:-webkit-full-screen #slide-18 .md\:text-3xl {
+            font-size: calc(2.04rem * var(--st18)) !important;
+            line-height: calc(2.35rem * var(--st18)) !important;
+        }
+
+        #slide-viewport:fullscreen #slide-18 .mb-6,
+        #slide-viewport:-webkit-full-screen #slide-18 .mb-6 {
+            margin-bottom: calc(0.7rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .mb-2,
+        #slide-viewport:-webkit-full-screen #slide-18 .mb-2 {
+            margin-bottom: calc(0.35rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .gap-6,
+        #slide-viewport:-webkit-full-screen #slide-18 .gap-6 {
+            gap: calc(0.7rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .gap-5,
+        #slide-viewport:-webkit-full-screen #slide-18 .gap-5 {
+            gap: calc(1.25rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .space-y-6 > :not([hidden]) ~ :not([hidden]),
+        #slide-viewport:-webkit-full-screen #slide-18 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+            margin-top: calc(0.7rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .bg-brand-dark\/40.p-6,
+        #slide-viewport:-webkit-full-screen #slide-18 .bg-brand-dark\/40.p-6 {
+            padding: calc(1.3rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .w-12,
+        #slide-viewport:-webkit-full-screen #slide-18 .w-12 {
+            width: calc(4.1rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .h-12,
+        #slide-viewport:-webkit-full-screen #slide-18 .h-12 {
+            height: calc(4.1rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .bg-brand-dark\/40 .text-xl,
+        #slide-viewport:-webkit-full-screen #slide-18 .bg-brand-dark\/40 .text-xl {
+            font-size: calc(1.39rem * var(--st18)) !important;
+        }
+        #slide-viewport:fullscreen #slide-18 .bg-brand-dark\/40 .rounded-xl,
+        #slide-viewport:-webkit-full-screen #slide-18 .bg-brand-dark\/40 .rounded-xl {
+            border-radius: calc(0.75rem * var(--st18)) !important;
+        }
+
+        /* Slide 16 — fullscreen: scale inner content to fill the canvas */
+        #slide-viewport:fullscreen #slide-16,
+        #slide-viewport:-webkit-full-screen #slide-16 {
+            --st16: 1.26;
+            padding: 2rem 2.75rem 1.5rem !important;
+        }
+
+        #slide-viewport:fullscreen #slide-16 .st16-main,
+        #slide-viewport:-webkit-full-screen #slide-16 .st16-main {
+            justify-content: center;
+        }
+
+        #slide-viewport:fullscreen #slide-16 .st16-cards-grid,
+        #slide-viewport:-webkit-full-screen #slide-16 .st16-cards-grid {
+            width: 100%;
+            align-content: center;
+        }
+
+        #slide-viewport:fullscreen #slide-16 .text-xs,
+        #slide-viewport:-webkit-full-screen #slide-16 .text-xs {
+            font-size: calc(0.75rem * var(--st16)) !important;
+            line-height: calc(1rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .text-sm,
+        #slide-viewport:-webkit-full-screen #slide-16 .text-sm {
+            font-size: calc(0.875rem * var(--st16)) !important;
+            line-height: calc(1.35rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .text-lg,
+        #slide-viewport:-webkit-full-screen #slide-16 .text-lg {
+            font-size: calc(1.125rem * var(--st16)) !important;
+            line-height: calc(1.65rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .text-2xl,
+        #slide-viewport:-webkit-full-screen #slide-16 .text-2xl {
+            font-size: calc(1.5rem * var(--st16)) !important;
+            line-height: calc(2rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .text-3xl,
+        #slide-viewport:-webkit-full-screen #slide-16 .text-3xl {
+            font-size: calc(1.875rem * var(--st16)) !important;
+            line-height: calc(2.25rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .md\:text-3xl,
+        #slide-viewport:-webkit-full-screen #slide-16 .md\:text-3xl {
+            font-size: calc(1.875rem * var(--st16)) !important;
+            line-height: calc(2.25rem * var(--st16)) !important;
+        }
+
+        #slide-viewport:fullscreen #slide-16 .gap-6,
+        #slide-viewport:-webkit-full-screen #slide-16 .gap-6 {
+            gap: calc(1.5rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .mb-6,
+        #slide-viewport:-webkit-full-screen #slide-16 .mb-6 {
+            margin-bottom: calc(1.5rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .mb-3,
+        #slide-viewport:-webkit-full-screen #slide-16 .mb-3 {
+            margin-bottom: calc(0.75rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .mb-2,
+        #slide-viewport:-webkit-full-screen #slide-16 .mb-2 {
+            margin-bottom: calc(0.5rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .mt-1,
+        #slide-viewport:-webkit-full-screen #slide-16 .mt-1 {
+            margin-top: calc(0.25rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .p-5,
+        #slide-viewport:-webkit-full-screen #slide-16 .p-5 {
+            padding: calc(1.25rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .rounded-xl,
+        #slide-viewport:-webkit-full-screen #slide-16 .rounded-xl {
+            border-radius: calc(0.75rem * var(--st16)) !important;
+        }
+        #slide-viewport:fullscreen #slide-16 .leading-relaxed,
+        #slide-viewport:-webkit-full-screen #slide-16 .leading-relaxed {
+            line-height: calc(1.625 * var(--st16)) !important;
+        }
+
         /* Match both cards on slide 3 */
         #slide-14 .bg-brand-secondary\/5 h3,
         #slide-14 .bg-red-950\/10 h3 {
@@ -564,18 +882,151 @@
             align-items: flex-start !important;
         }
 
+        #slide-14 .bg-red-950\/10 ul li {
+            color: #f1f5f9 !important;
+        }
+
+        /* Opening slide — cinematic reveal */
+        @keyframes cover-glow-fade-in {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.82);
+            }
+            to {
+                opacity: 0.3;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+        }
+
+        @keyframes cover-image-enter {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        #slide-1.cover-reveal-playing .cover-text-block {
+            opacity: 0;
+        }
+
+        #slide-1.cover-reveal-playing:not(.cover-reveal-glow) .cover-image-glow {
+            opacity: 0;
+        }
+
+        #slide-1.cover-reveal-playing:not(.cover-reveal-image) .cover-image-circle {
+            opacity: 0;
+        }
+
+        #slide-1.cover-reveal-glow .cover-image-glow {
+            animation: cover-glow-fade-in 0.5s cubic-bezier(0, 0, 0.2, 1) forwards;
+        }
+
+        #slide-1.cover-reveal-image .cover-image-circle {
+            animation: cover-image-enter 0.6s cubic-bezier(0, 0, 0.2, 1) forwards;
+        }
+
         /* Opening slide cover image */
         .cover-image-circle {
+            position: relative;
+            z-index: 1;
             box-shadow: 0 0 60px rgba(14, 165, 233, 0.25), 0 0 100px rgba(16, 185, 129, 0.15);
         }
         .cover-image-glow {
+            left: 50%;
+            top: 50%;
+            width: 72%;
+            height: 72%;
+            transform: translate(-50%, -50%);
             background: linear-gradient(to left, #10b981, #0ea5e9);
-            filter: blur(48px);
-            opacity: 0.35;
+            filter: blur(40px);
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
         }
         .cover-slide-photo {
             transform: scale(1.22);
             object-position: 56% center;
+        }
+
+        /* Slide 1 — enlarged family photo & balanced layout */
+        #slide-1 .cover-content-row {
+            gap: 2rem;
+            padding-inline: 0.5rem;
+        }
+
+        #slide-1 .cover-text-block {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+
+        #slide-1 .cover-image-wrap {
+            flex-shrink: 0;
+            padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+        }
+
+        #slide-1 .cover-image-circle {
+            width: 18.75rem;
+            height: 18.75rem;
+        }
+
+        @media (min-width: 768px) {
+            #slide-1 .cover-content-row {
+                gap: 2.25rem;
+                padding-inline: 1rem;
+            }
+
+            #slide-1 .cover-text-block {
+                padding-right: 2rem !important;
+                padding-left: 1.5rem;
+            }
+
+            #slide-1 .cover-image-wrap {
+                padding: 0.5rem 1rem 0.5rem 0.5rem;
+            }
+
+            #slide-1 .cover-image-circle {
+                width: 23.5rem;
+                height: 23.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #slide-1 .cover-content-row {
+                gap: 2.5rem;
+                padding-inline: 1.25rem;
+            }
+
+            #slide-1 .cover-image-circle {
+                width: 26rem;
+                height: 26rem;
+            }
+        }
+
+        /* Slide 1 — fullscreen: larger family photo only */
+        #slide-viewport:fullscreen #slide-1 .cover-image-circle,
+        #slide-viewport:-webkit-full-screen #slide-1 .cover-image-circle {
+            width: 33.25rem;
+            height: 33.25rem;
+        }
+
+        #slide-viewport:fullscreen #slide-1 .cover-content-row,
+        #slide-viewport:-webkit-full-screen #slide-1 .cover-content-row {
+            gap: 2.75rem;
+            padding-inline: 1.5rem;
+        }
+
+        #slide-viewport:fullscreen #slide-1 .cover-image-wrap,
+        #slide-viewport:-webkit-full-screen #slide-1 .cover-image-wrap {
+            padding: 0.75rem 1.5rem 0.75rem 1rem;
+        }
+
+        #slide-viewport:fullscreen #slide-1 .cover-text-block,
+        #slide-viewport:-webkit-full-screen #slide-1 .cover-text-block {
+            padding-left: 2rem;
         }
 
         /* Slide 3 — team members */
@@ -604,18 +1055,19 @@
             max-width: 18rem;
         }
         #slide-3 .team-photo-circle {
-            width: 11rem;
-            height: 11rem;
+            width: 100%;
+            height: 100%;
             border-radius: 999px;
             overflow: hidden;
             position: relative;
             border: 4px solid rgba(14, 165, 233, 0.35);
             box-shadow: 0 0 36px rgba(14, 165, 233, 0.22);
-            margin-bottom: 1.25rem;
+            margin-bottom: 0;
             flex-shrink: 0;
+            transition: box-shadow 0.5s cubic-bezier(0, 0, 0.2, 1);
         }
         @media (min-width: 768px) {
-            #slide-3 .team-photo-circle { width: 13.5rem; height: 13.5rem; }
+            #slide-3 .team-photo-circle { width: 100%; height: 100%; }
         }
         #slide-3 .team-photo-placeholder {
             position: absolute;
@@ -658,25 +1110,109 @@
             #slide-3 .team-role { font-size: 1.1875rem !important; }
         }
 
-        /* Smaller text on slide 12 */
-        #slide-19 .text-xs { font-size: 0.83rem !important; line-height: 1.1rem !important; }
-        #slide-19 .text-sm { font-size: 0.96rem !important; line-height: 1.38rem !important; }
-        #slide-19 .text-base { font-size: 1.1rem !important; line-height: 1.58rem !important; }
-        #slide-19 .text-lg { font-size: 1.1rem !important; line-height: 1.58rem !important; }
-        #slide-19 .text-xl { font-size: 1.24rem !important; line-height: 1.7rem !important; }
-        #slide-19 .text-2xl { font-size: 1.49rem !important; line-height: 1.95rem !important; }
-        #slide-19 .text-3xl { font-size: 1.82rem !important; line-height: 2.15rem !important; }
-        #slide-19 .text-4xl { font-size: 2.2rem !important; line-height: 2.5rem !important; }
-
-        @media (min-width: 768px) {
-            #slide-19 .md\:text-base { font-size: 1.1rem !important; line-height: 1.58rem !important; }
-            #slide-19 .md\:text-xl { font-size: 1.24rem !important; line-height: 1.7rem !important; }
-            #slide-19 .md\:text-4xl { font-size: 2.2rem !important; line-height: 2.5rem !important; }
+        /* Slide 3 — speakers reveal animation */
+        @keyframes team-title-in {
+            from { opacity: 0; transform: translateY(-14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes team-photo-in {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes team-fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes team-ring-draw {
+            to { stroke-dashoffset: 0; }
         }
 
-        #slide-19 .mb-8 { margin-bottom: 1.1rem !important; }
-        #slide-19 .gap-6 { gap: 0.9rem !important; }
-        #slide-19 .bg-brand-dark\/40.p-6 { padding: 1.3rem !important; }
+        #slide-3.team-reveal-playing .team-speakers-title {
+            opacity: 0;
+            animation: team-title-in 0.5s cubic-bezier(0, 0, 0.2, 1) forwards;
+        }
+
+        #slide-3.team-reveal-playing .team-member .team-photo-circle,
+        #slide-3.team-reveal-playing .team-member .team-name,
+        #slide-3.team-reveal-playing .team-member .team-role {
+            opacity: 0;
+        }
+
+        #slide-3.team-reveal-playing .team-member .team-ring circle {
+            stroke-dasharray: 296;
+            stroke-dashoffset: 296;
+        }
+
+        #slide-3.team-reveal-playing .team-member.is-photo-in .team-photo-circle {
+            animation: team-photo-in 0.4s cubic-bezier(0, 0, 0.2, 1) forwards;
+        }
+
+        #slide-3.team-reveal-playing .team-member.is-photo-in .team-ring circle {
+            animation: team-ring-draw 0.4s cubic-bezier(0, 0, 0.2, 1) forwards;
+        }
+
+        #slide-3.team-reveal-playing .team-member.is-name-in .team-name {
+            animation: team-fade-in 0.35s cubic-bezier(0, 0, 0.2, 1) forwards;
+        }
+
+        #slide-3.team-reveal-playing .team-member.is-role-in .team-role {
+            animation: team-fade-in 0.35s cubic-bezier(0, 0, 0.2, 1) forwards;
+        }
+
+        #slide-3.team-reveal-glow .team-photo-circle {
+            box-shadow: 0 0 44px rgba(14, 165, 233, 0.42), 0 0 68px rgba(16, 185, 129, 0.28);
+            transition: box-shadow 0.5s cubic-bezier(0, 0, 0.2, 1);
+        }
+
+        #slide-3 .team-photo-frame {
+            position: relative;
+            width: 11rem;
+            height: 11rem;
+            margin-bottom: 1.25rem;
+            flex-shrink: 0;
+        }
+        @media (min-width: 768px) {
+            #slide-3 .team-photo-frame { width: 13.5rem; height: 13.5rem; }
+        }
+
+        #slide-3 .team-ring {
+            position: absolute;
+            inset: -3px;
+            width: calc(100% + 6px);
+            height: calc(100% + 6px);
+            transform: rotate(-90deg);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        #slide-3 .team-member:nth-child(1) .team-ring { color: #38bdf8; }
+        #slide-3 .team-member:nth-child(2) .team-ring { color: #34d399; }
+        #slide-3 .team-member:nth-child(3) .team-ring { color: #a78bfa; }
+
+        /* Slide 19 — challenges layout, scaled ~12.5% for readability */
+        #slide-19 .text-xs { font-size: 0.93rem !important; line-height: 1.2rem !important; }
+        #slide-19 .text-sm { font-size: 1.08rem !important; line-height: 1.5rem !important; }
+        #slide-19 .text-base { font-size: 1.24rem !important; line-height: 1.72rem !important; }
+        #slide-19 .text-lg { font-size: 1.24rem !important; line-height: 1.72rem !important; }
+        #slide-19 .text-xl { font-size: 1.4rem !important; line-height: 1.85rem !important; }
+        #slide-19 .text-2xl { font-size: 1.68rem !important; line-height: 2.1rem !important; }
+        #slide-19 .text-3xl { font-size: 2.05rem !important; line-height: 2.35rem !important; }
+        #slide-19 .text-4xl { font-size: 2.48rem !important; line-height: 2.75rem !important; }
+
+        @media (min-width: 768px) {
+            #slide-19 .md\:text-base { font-size: 1.24rem !important; line-height: 1.72rem !important; }
+            #slide-19 .md\:text-xl { font-size: 1.4rem !important; line-height: 1.85rem !important; }
+            #slide-19 .md\:text-4xl { font-size: 2.48rem !important; line-height: 2.75rem !important; }
+        }
+
+        #slide-19 .mb-8 { margin-bottom: 1rem !important; }
+        #slide-19 .mb-2 { margin-bottom: 0.4rem !important; }
+        #slide-19 .gap-6 { gap: 0.8rem !important; }
+        #slide-19 .gap-5 { gap: 1.3rem !important; }
+        #slide-19 .bg-brand-dark\/40.p-6 { padding: 1.45rem !important; }
+        #slide-19 .w-12 { width: 3.375rem !important; }
+        #slide-19 .h-12 { height: 3.375rem !important; }
+        #slide-19 .bg-brand-dark\/40 .text-xl { font-size: 1.4rem !important; }
 
         /* Slide 8 — premium project timeline */
         @keyframes st8-fade-up {
@@ -855,8 +1391,8 @@
             width: 100%;
         }
         #slide-8 .station-list li {
-            font-size: 0.95rem;
-            line-height: 1.45;
+            font-size: 1.18rem;
+            line-height: 1.38;
             color: #94a3b8;
             font-weight: 500;
             display: flex;
@@ -871,8 +1407,9 @@
             flex-shrink: 0;
         }
         @media (min-width: 768px) {
-            #slide-8 .station-list li { font-size: 1.02rem; }
-            #slide-8 .premium-timeline__detail { padding: 1.375rem 1.125rem; }
+            #slide-8 .station-list li { font-size: 1.32rem; }
+            #slide-8 .premium-timeline__detail { padding: 1.125rem 1rem; }
+            #slide-8 .station-list { gap: 0.7rem; }
         }
 
         #slide-8.timeline-replay .st8-anim-header {
@@ -943,10 +1480,10 @@
         }
 
         #slide-9.golive-playing .golive-title {
-            animation: st9-fade-down 0.7s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+            animation: st9-fade-down 0.45s cubic-bezier(0.45, 0, 0.55, 1) forwards;
         }
         #slide-9.golive-playing .golive-eyebrow {
-            animation: st9-fade-down 0.65s cubic-bezier(0.45, 0, 0.55, 1) 0.35s forwards;
+            animation: st9-fade-down 0.4s cubic-bezier(0.45, 0, 0.55, 1) 0.2s forwards;
         }
 
         #slide-9 .golive-timeline { position: relative; padding: 0.5rem 0; }
@@ -978,7 +1515,7 @@
             background: linear-gradient(to left, #0ea5e9, #10b981, #8b5cf6);
             border-radius: 999px;
             box-shadow: 0 0 12px rgba(14, 165, 233, 0.35);
-            transition: width 0.55s cubic-bezier(0.45, 0, 0.55, 1);
+            transition: width 0.32s cubic-bezier(0.45, 0, 0.55, 1);
         }
 
         #slide-9 .golive-nodes {
@@ -1067,10 +1604,10 @@
             transform: translateY(8px);
         }
         #slide-9 .golive-node.is-date-visible .timeline-date {
-            animation: st9-fade-up 0.45s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+            animation: st9-fade-up 0.28s cubic-bezier(0.45, 0, 0.55, 1) forwards;
         }
         #slide-9 .golive-node.is-label-visible .timeline-label {
-            animation: st9-fade-up 0.4s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+            animation: st9-fade-up 0.25s cubic-bezier(0.45, 0, 0.55, 1) forwards;
         }
         @media (min-width: 768px) {
             #slide-9 .timeline-date { font-size: 1.5rem; padding: 0.2rem 0.55rem; }
@@ -1078,21 +1615,22 @@
         }
 
         #slide-9 .timeline-footer-note {
-            font-size: 0.9375rem !important;
-            line-height: 1.45rem !important;
+            font-size: 1.125rem !important;
+            line-height: 1.55rem !important;
             opacity: 0;
         }
         #slide-9 .timeline-footer-note .fa-rocket {
             display: inline-block;
+            font-size: 1.1em;
         }
         #slide-9.golive-finished .timeline-footer-note {
-            animation: st9-fade-up 0.6s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+            animation: st9-fade-up 0.4s cubic-bezier(0.45, 0, 0.55, 1) forwards;
         }
         #slide-9.golive-finished .timeline-footer-note .fa-rocket {
-            animation: st9-rocket-lift 0.85s cubic-bezier(0.45, 0, 0.55, 1) 0.35s;
+            animation: st9-rocket-lift 0.5s cubic-bezier(0.45, 0, 0.55, 1) 0.2s;
         }
         @media (min-width: 768px) {
-            #slide-9 .timeline-footer-note { font-size: 1.0625rem !important; }
+            #slide-9 .timeline-footer-note { font-size: 1.3rem !important; line-height: 1.7rem !important; }
         }
 
         .slide-hidden {
@@ -1222,24 +1760,24 @@
         <!-- ================= TOPIC 1: הקצאת תעודת זהות ================= -->
         
         <!-- Slide 1: שקופית פתיחה - מודול לידות -->
-        <div id="slide-1" class="slide-container slide-active w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
+        <div id="slide-1" class="slide-container slide-active cover-reveal-playing w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-bl from-brand-primary/5 via-transparent to-brand-secondary/5 pointer-events-none"></div>
 
-            <div class="flex flex-col md:flex-row items-center justify-between gap-10 my-auto w-full flex-grow">
-                <div class="flex-1 text-right space-y-5 md:pr-6">
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            <div class="cover-content-row flex flex-col md:flex-row items-center justify-between my-auto w-full flex-grow">
+                <div class="cover-text-block flex-1 text-right space-y-5">
+                    <h2 class="cover-title text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
                         מודול לידות
                     </h2>
-                    <p class="text-2xl md:text-3xl font-bold text-brand-secondary">
+                    <p class="cover-subtitle text-2xl md:text-3xl font-bold text-brand-secondary">
                         חטיבת המרכזים הרפואיים
                     </p>
-                    <div class="h-1 w-28 md:w-36 rounded-full bg-gradient-to-l from-brand-secondary to-brand-primary"></div>
+                    <div class="cover-accent-line h-1 w-28 md:w-36 rounded-full bg-gradient-to-l from-brand-secondary to-brand-primary"></div>
                 </div>
 
-                <div class="flex-shrink-0 flex items-center justify-center p-4">
+                <div class="cover-image-wrap flex-shrink-0 flex items-center justify-center">
                     <div class="relative">
-                        <div class="cover-image-glow absolute inset-0 rounded-full scale-110"></div>
-                        <div class="cover-image-circle relative w-64 h-64 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] rounded-full bg-gradient-to-l from-brand-secondary via-teal-400 to-brand-primary border-2 border-brand-primary/40 flex items-center justify-center overflow-hidden">
+                        <div class="cover-image-glow absolute rounded-full"></div>
+                        <div class="cover-image-circle relative rounded-full bg-gradient-to-l from-brand-secondary via-teal-400 to-brand-primary border-2 border-brand-primary/40 flex items-center justify-center overflow-hidden">
                             <img src="./Birth.png" alt="משפחה עם תינוק בבית חולים" class="cover-slide-photo w-full h-full object-cover" id="cover-slide-image">
                         </div>
                     </div>
@@ -1277,38 +1815,53 @@
         <div id="slide-3" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div class="flex flex-col flex-grow min-h-0">
                 <div class="text-right mb-6 flex-shrink-0">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">הדוברים המרכזיים</h2>
+                    <h2 class="team-speakers-title text-3xl md:text-4xl font-extrabold text-white">הדוברים המרכזיים</h2>
                 </div>
 
                 <div class="team-grid">
-                    <div class="team-member">
-                        <div class="team-photo-circle">
-                            <div class="team-photo-placeholder">
-                                <i class="fa-solid fa-user text-4xl text-brand-primary/25"></i>
+                    <div class="team-member" data-team-member>
+                        <div class="team-photo-frame">
+                            <svg class="team-ring" viewBox="0 0 100 100" aria-hidden="true">
+                                <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></circle>
+                            </svg>
+                            <div class="team-photo-circle">
+                                <div class="team-photo-placeholder">
+                                    <i class="fa-solid fa-user text-4xl text-brand-primary/25"></i>
+                                </div>
+                                <img src="./Raz.jpeg" alt="רז ברקוביץ'" class="team-photo" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
                             </div>
-                            <img src="./Raz.jpeg" alt="רז ברקוביץ'" class="team-photo" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
                         </div>
                         <h3 class="team-name">רז ברקוביץ'</h3>
                         <p class="team-role">מיישם ומנהל פרויקטים</p>
                     </div>
 
-                    <div class="team-member">
-                        <div class="team-photo-circle">
-                            <div class="team-photo-placeholder">
-                                <i class="fa-solid fa-user text-4xl text-brand-secondary/25"></i>
+                    <div class="team-member" data-team-member>
+                        <div class="team-photo-frame">
+                            <svg class="team-ring" viewBox="0 0 100 100" aria-hidden="true">
+                                <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></circle>
+                            </svg>
+                            <div class="team-photo-circle">
+                                <div class="team-photo-placeholder">
+                                    <i class="fa-solid fa-user text-4xl text-brand-secondary/25"></i>
+                                </div>
+                                <img src="./Nofar.jpeg" alt="נופר אברהם נתן" class="team-photo" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
                             </div>
-                            <img src="./Nofar.jpeg" alt="נופר אברהם נתן" class="team-photo" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
                         </div>
                         <h3 class="team-name">נופר אברהם נתן</h3>
                         <p class="team-role">מנתחת מערכות מידע</p>
                     </div>
 
-                    <div class="team-member">
-                        <div class="team-photo-circle">
-                            <div class="team-photo-placeholder">
-                                <i class="fa-solid fa-user text-4xl text-brand-accent/25"></i>
+                    <div class="team-member" data-team-member>
+                        <div class="team-photo-frame">
+                            <svg class="team-ring" viewBox="0 0 100 100" aria-hidden="true">
+                                <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></circle>
+                            </svg>
+                            <div class="team-photo-circle">
+                                <div class="team-photo-placeholder">
+                                    <i class="fa-solid fa-user text-4xl text-brand-accent/25"></i>
+                                </div>
+                                <img src="./Anna.jpeg" alt="אנה סבג" class="team-photo" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
                             </div>
-                            <img src="./Anna.jpeg" alt="אנה סבג" class="team-photo" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
                         </div>
                         <h3 class="team-name">אנה סבג</h3>
                         <p class="team-role">מיישמת ומנהלת פרויקטים</p>
@@ -1553,7 +2106,7 @@
                                     <i class="fa-solid fa-lightbulb"></i>
                                 </div>
                                 <h3 class="station-title">ייזום ואפיון</h3>
-                                <p class="station-period">מאי–יולי</p>
+                                <p class="station-period">מאי–אוגוסט</p>
                             </div>
                             <div class="premium-timeline__station">
                                 <div class="premium-timeline__node premium-timeline__node--secondary">
@@ -1856,7 +2409,7 @@
                     <i class="fa-solid fa-baby"></i> נושא 2: הודעת לידה
                 </span>
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                    <span class="bg-gradient-to-l from-brand-accent to-purple-300 bg-clip-text text-transparent">תהליך הודעות לידה</span>
+                    <span class="bg-gradient-to-l from-brand-accent to-purple-300 bg-clip-text text-transparent">הודעה על לידה</span>
                 </h2>
                 <p class="text-lg text-brand-muted max-w-2xl mx-auto">
                     מעבר לאוטומציה מלאה וביטול הניירת
@@ -1877,7 +2430,7 @@
             <div class="flex flex-col flex-grow min-h-0">
                 <span class="text-xs font-bold text-brand-accent tracking-widest uppercase flex-shrink-0">נושא 2: הודעת לידה</span>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-6 flex-shrink-0">
-                    מהפכת הודעות הלידה: <span class="text-brand-accent">מעבר לאוטומציה מלאה וביטול הניירת</span>
+                    מהפכת הודעות על לידה, <span class="text-brand-accent">מעבר לאוטומציה מלאה וביטול הניירת</span>
                 </h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto flex-1 min-h-0 content-center">
@@ -1888,7 +2441,7 @@
                             <i class="fa-solid fa-ban"></i>
                         </div>
                         <h3 class="text-lg font-bold text-red-400 mb-3">פתקים וטפסים ידניים</h3>
-                        <ul class="space-y-2.5 text-sm text-brand-muted">
+                        <ul class="space-y-2.5 text-sm text-brand-text">
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-xmark text-red-500/50"></i> פתקים פיזיים מחדרי לידה שעוברים ידנית למזכירות</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-xmark text-red-500/50"></i> עיכובים בקליטה - המזכירות לא מודעת ללידה בזמן אמת</li>
                             <li class="flex items-center gap-2"><i class="fa-solid fa-circle-xmark text-red-500/50"></i> סיכון מוגבר לטעויות הקלדה ותהליכים מסורבלים</li>
@@ -1998,13 +2551,13 @@
 
         <!-- Slide 12: הודעת לידה - יכולות חכמות ומהירות (Smart features) -->
         <div id="slide-16" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
-            <div>
+            <div class="st16-main flex flex-col flex-grow min-h-0">
                 <span class="text-xs font-bold text-brand-accent tracking-widest uppercase">נושא 2: הודעת לידה</span>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-6">
                     דיגיטציה מקצה לקצה: <span class="text-brand-accent">היכולות החכמות של המערכת</span>
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-auto">
+                <div class="st16-cards-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-auto flex-1 min-h-0 content-center">
                     <!-- Feature 1 -->
                     <div class="p-5 bg-brand-dark/30 rounded-xl border border-white/5 relative">
                         <div class="text-2xl text-brand-primary mb-3"><i class="fa-solid fa-arrows-spin"></i></div>
@@ -2070,14 +2623,14 @@
 
         <!-- Slide 14: דיווח לידה - שידור מהיר בלחיצת כפתור -->
         <div id="slide-18" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
-            <div class="flex flex-col flex-grow min-h-0">
+            <div class="st18-main flex flex-col flex-grow min-h-0">
                 <span class="text-xs font-bold text-brand-secondary tracking-widest uppercase flex-shrink-0">נושא 3: דיווח לידה</span>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-6 flex-shrink-0">
                     שידור המידע למרשם: <span class="text-brand-secondary">אפס מאמץ, מקסימום אמינות</span>
                 </h2>
                 
                 <div class="grid grid-cols-1 gap-6 my-auto flex-1 min-h-0 content-center">
-                    <div class="space-y-6 max-w-5xl w-full">
+                    <div class="st18-cards-wrap space-y-6 max-w-5xl w-full">
                         <div class="p-6 bg-brand-dark/40 rounded-2xl border border-white/5 flex gap-5 items-start">
                             <div class="w-12 h-12 rounded-xl bg-brand-secondary/10 text-brand-secondary flex items-center justify-center text-xl shrink-0">
                                 <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -2186,7 +2739,7 @@
 
                 <div class="p-6 bg-brand-dark/40 rounded-2xl border border-white/5 mb-6">
                     <p class="text-lg md:text-xl text-brand-text leading-relaxed">
-                        פיתוח דוח מרכז הנותן מבט של 360 על דיווחי לידה שבוצעו בכל בית חולים
+                        פיתוח דוח מרכז הנותן מבט מקיף על הדיווחי לידה שבוצעו בכל מרכז רפואי
                     </p>
                 </div>
 
@@ -2228,14 +2781,14 @@
 
             <div class="flex flex-col flex-grow justify-center items-center text-center space-y-8 my-auto">
                 <div class="space-y-3">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">קצת מספרים</h2>
+                    <h2 class="st21-title text-3xl md:text-4xl font-extrabold text-white">קצת מספרים</h2>
                 </div>
 
-                <div class="text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-l from-brand-primary to-brand-secondary bg-clip-text text-transparent leading-none">
-                    כ-20 אלף
+                <div class="st21-number text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-l from-brand-primary to-brand-secondary bg-clip-text text-transparent leading-none">
+                    <span class="st21-number-value">כ-20 אלף</span>
                 </div>
 
-                <p class="text-lg md:text-xl text-brand-muted max-w-3xl">
+                <p class="st21-subtitle text-lg md:text-xl text-brand-muted max-w-3xl">
                     עד כה נולדו ודווחו באופן דיגיטלי כ-20 אלף ילודים
                 </p>
             </div>
@@ -2318,6 +2871,12 @@
         }
 
         let goliveAnimationToken = 0;
+        let coverRevealToken = 0;
+        let teamRevealToken = 0;
+        let st21AnimationToken = 0;
+
+        const ST21_FINAL_TEXT = 'כ-20 אלף';
+        const ST21_COUNT_STEPS = [0, 500, 2000, 5000, 10000, 15000, 20000];
 
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
@@ -2350,16 +2909,16 @@
 
         async function animateGoliveNode(node) {
             node.classList.add('is-ready');
-            await sleep(80);
+            await sleep(45);
             node.classList.add('is-hit');
-            await sleep(200);
+            await sleep(110);
             node.classList.remove('is-hit');
             node.classList.add('is-glow');
-            await sleep(120);
+            await sleep(70);
             node.classList.add('is-date-visible');
-            await sleep(220);
+            await sleep(125);
             node.classList.add('is-label-visible');
-            await sleep(180);
+            await sleep(100);
             node.classList.remove('is-glow');
         }
 
@@ -2373,7 +2932,7 @@
                 if (token !== goliveAnimationToken) return;
                 const progress = ((i + 1) / count) * 100;
                 fill.style.width = progress + '%';
-                await sleep(480);
+                await sleep(280);
                 if (token !== goliveAnimationToken) return;
                 await animateGoliveNode(nodes[i]);
             }
@@ -2388,18 +2947,213 @@
             void slide.offsetWidth;
             slide.classList.add('golive-playing');
 
-            await sleep(900);
+            await sleep(500);
             if (token !== goliveAnimationToken) return;
 
             const rows = slide.querySelectorAll('[data-golive-row]');
             for (const row of rows) {
                 if (token !== goliveAnimationToken) return;
                 await animateGoliveRow(row, token);
-                await sleep(120);
+                await sleep(60);
             }
 
             if (token !== goliveAnimationToken) return;
             slide.classList.add('golive-finished');
+        }
+
+        function resetCoverSlide(slide) {
+            slide.classList.remove('cover-reveal-playing', 'cover-reveal-glow', 'cover-reveal-image', 'cover-reveal-finished');
+            slide.querySelectorAll('.cover-image-glow, .cover-image-circle').forEach(el => {
+                el.style.animation = 'none';
+                el.style.opacity = '';
+                el.style.transform = '';
+                void el.offsetWidth;
+                el.style.animation = '';
+                el.style.opacity = '';
+                el.style.transform = '';
+            });
+        }
+
+        async function playCoverReveal() {
+            const slide = document.getElementById('slide-1');
+            if (!slide) return;
+
+            const token = ++coverRevealToken;
+            resetCoverSlide(slide);
+            void slide.offsetWidth;
+            slide.classList.add('cover-reveal-playing');
+
+            await sleep(500);
+            if (token !== coverRevealToken) return;
+
+            slide.classList.add('cover-reveal-glow', 'cover-reveal-image');
+
+            await sleep(600);
+            if (token !== coverRevealToken) return;
+
+            slide.classList.remove('cover-reveal-playing', 'cover-reveal-glow', 'cover-reveal-image');
+            slide.classList.add('cover-reveal-finished');
+        }
+
+        function resetTeamSlide(slide) {
+            slide.classList.remove('team-reveal-playing', 'team-reveal-glow', 'team-reveal-finished');
+            slide.querySelectorAll('[data-team-member]').forEach(member => {
+                member.classList.remove('is-photo-in', 'is-name-in', 'is-role-in');
+            });
+            slide.querySelectorAll('.team-speakers-title, .team-photo-circle, .team-name, .team-role').forEach(el => {
+                el.style.animation = 'none';
+                el.style.opacity = '';
+                el.style.transform = '';
+                void el.offsetWidth;
+                el.style.animation = '';
+                el.style.opacity = '';
+                el.style.transform = '';
+            });
+            slide.querySelectorAll('.team-ring circle').forEach(circle => {
+                circle.style.animation = 'none';
+                circle.style.strokeDashoffset = '';
+                void circle.offsetWidth;
+                circle.style.animation = '';
+                circle.style.strokeDashoffset = '';
+            });
+        }
+
+        async function revealTeamMember(member, token) {
+            member.classList.add('is-photo-in');
+            await sleep(400);
+            if (token !== teamRevealToken) return false;
+
+            member.classList.add('is-name-in');
+            await sleep(150);
+            if (token !== teamRevealToken) return false;
+
+            member.classList.add('is-role-in');
+            await sleep(300);
+            return token === teamRevealToken;
+        }
+
+        async function playTeamReveal() {
+            const slide = document.getElementById('slide-3');
+            if (!slide) return;
+
+            const token = ++teamRevealToken;
+            resetTeamSlide(slide);
+            void slide.offsetWidth;
+            slide.classList.add('team-reveal-playing');
+
+            await sleep(500);
+            if (token !== teamRevealToken) return;
+
+            const members = slide.querySelectorAll('[data-team-member]');
+            for (const member of members) {
+                if (token !== teamRevealToken) return;
+                const ok = await revealTeamMember(member, token);
+                if (!ok) return;
+                await sleep(100);
+            }
+
+            slide.classList.add('team-reveal-glow');
+            await sleep(500);
+            if (token !== teamRevealToken) return;
+
+            slide.classList.remove('team-reveal-playing', 'team-reveal-glow');
+            slide.classList.add('team-reveal-finished');
+        }
+
+        function formatSt21Count(value) {
+            return value.toLocaleString('en-US');
+        }
+
+        function resetSt21Slide(slide) {
+            slide.classList.remove('st21-playing', 'st21-counting', 'st21-count-done', 'st21-subtitle-visible', 'st21-finished');
+            const title = slide.querySelector('.st21-title');
+            const number = slide.querySelector('.st21-number');
+            const valueEl = slide.querySelector('.st21-number-value');
+            const subtitle = slide.querySelector('.st21-subtitle');
+            [title, subtitle].forEach(el => {
+                if (!el) return;
+                el.style.animation = 'none';
+                el.style.opacity = '';
+                el.style.transform = '';
+                void el.offsetWidth;
+                el.style.animation = '';
+            });
+            if (valueEl) {
+                valueEl.textContent = ST21_FINAL_TEXT;
+            }
+            if (number) {
+                number.style.animation = 'none';
+                number.style.opacity = '';
+                number.style.transform = '';
+                void number.offsetWidth;
+                number.style.animation = '';
+                number.querySelectorAll('.st21-particle').forEach(p => p.remove());
+            }
+        }
+
+        function spawnSt21Particles(numberEl) {
+            if (!numberEl) return;
+            numberEl.querySelectorAll('.st21-particle').forEach(p => p.remove());
+            for (let i = 0; i < 14; i++) {
+                const particle = document.createElement('span');
+                particle.className = 'st21-particle';
+                particle.setAttribute('aria-hidden', 'true');
+                particle.style.setProperty('--x', `${(Math.random() - 0.5) * 140}px`);
+                particle.style.setProperty('--delay', `${Math.random() * 0.35}s`);
+                particle.style.setProperty('--dur', `${0.95 + Math.random() * 0.55}s`);
+                numberEl.appendChild(particle);
+            }
+        }
+
+        async function animateSt21Count(valueEl, token) {
+            const stepDelays = [200, 220, 260, 320, 400, 500];
+
+            for (let i = 0; i < ST21_COUNT_STEPS.length; i++) {
+                if (token !== st21AnimationToken) return false;
+                valueEl.textContent = formatSt21Count(ST21_COUNT_STEPS[i]);
+                if (i < stepDelays.length) {
+                    await sleep(stepDelays[i]);
+                }
+            }
+            return token === st21AnimationToken;
+        }
+
+        async function playSt21Animation() {
+            const slide = document.getElementById('slide-21');
+            if (!slide) return;
+
+            const token = ++st21AnimationToken;
+            resetSt21Slide(slide);
+            void slide.offsetWidth;
+            slide.classList.add('st21-playing');
+
+            const valueEl = slide.querySelector('.st21-number-value');
+            const numberEl = slide.querySelector('.st21-number');
+            if (!valueEl || !numberEl) return;
+
+            await sleep(680);
+            if (token !== st21AnimationToken) return;
+
+            slide.classList.add('st21-counting');
+            valueEl.textContent = '0';
+
+            const completed = await animateSt21Count(valueEl, token);
+            if (!completed) return;
+
+            valueEl.textContent = ST21_FINAL_TEXT;
+            slide.classList.remove('st21-counting');
+            slide.classList.add('st21-count-done');
+
+            await sleep(580);
+            if (token !== st21AnimationToken) return;
+
+            slide.classList.add('st21-subtitle-visible');
+
+            await sleep(420);
+            if (token !== st21AnimationToken) return;
+
+            spawnSt21Particles(numberEl);
+            slide.classList.add('st21-finished');
         }
 
         // Show a specific slide
@@ -2423,6 +3177,18 @@
             // Update text indicator
             document.getElementById('slide-index-indicator').innerText = `שקופית ${currentSlide} / ${totalSlides}`;
 
+            // Replay slide 1 cinematic cover reveal
+            coverRevealToken++;
+            const slide1 = document.getElementById('slide-1');
+            if (slide1) resetCoverSlide(slide1);
+            if (slideIndex === 1) playCoverReveal();
+
+            // Replay slide 3 speakers reveal animation
+            teamRevealToken++;
+            const slide3 = document.getElementById('slide-3');
+            if (slide3) resetTeamSlide(slide3);
+            if (slideIndex === 3) playTeamReveal();
+
             // Replay slide 8 timeline animation
             const slide8 = document.getElementById('slide-8');
             if (slide8) {
@@ -2438,6 +3204,12 @@
             const slide9 = document.getElementById('slide-9');
             if (slide9) resetGoliveSlide(slide9);
             if (slideIndex === 9) playGoliveAnimation();
+
+            // Replay slide 21 numbers count-up animation
+            st21AnimationToken++;
+            const slide21 = document.getElementById('slide-21');
+            if (slide21) resetSt21Slide(slide21);
+            if (slideIndex === 21) playSt21Animation();
 
             // Replay slide 12 proactive ID flow animation
             const slide12 = document.getElementById('slide-12');
@@ -2563,6 +3335,9 @@
             if (currentSlide === 8) {
                 const slide8 = document.getElementById('slide-8');
                 if (slide8) slide8.classList.add('timeline-replay');
+            }
+            if (currentSlide === 1) {
+                playCoverReveal();
             }
         };
     </script>
