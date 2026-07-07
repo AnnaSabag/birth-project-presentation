@@ -455,9 +455,9 @@
             }
         }
 
-        /* Slide 21 — "קצת מספרים" cinematic count-up */
+        /* Slide 21 — "קצת מספרים" stats reveal */
         @keyframes st21-fade-down {
-            from { opacity: 0; transform: translateY(-18px); }
+            from { opacity: 0; transform: translateY(-14px); }
             to { opacity: 1; transform: translateY(0); }
         }
         @keyframes st21-fade-up {
@@ -466,104 +466,330 @@
         }
         @keyframes st21-pulse {
             0%, 100% { transform: scale(1); }
-            45% { transform: scale(1.05); }
+            45% { transform: scale(1.04); }
         }
         @keyframes st21-glow {
-            0% { opacity: 0; transform: scale(0.92); }
-            35% { opacity: 0.85; transform: scale(1.08); }
-            100% { opacity: 0; transform: scale(1.18); }
+            0% { opacity: 0; }
+            35% { opacity: 0.85; }
+            100% { opacity: 0; }
         }
-        @keyframes st21-particle-rise {
-            0% {
-                opacity: 0;
-                transform: translate(calc(-50% + var(--x, 0px)), 10px) scale(0.4);
-            }
-            18% { opacity: var(--peak, 0.55); }
-            100% {
-                opacity: 0;
-                transform: translate(calc(-50% + var(--x, 0px)), -72px) scale(0.15);
-            }
+
+        #slide-21 .st21-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+            justify-content: center;
+            gap: 0.9rem;
+            padding: 0.15rem 0;
         }
 
         #slide-21 .st21-title {
             opacity: 0;
+            text-align: center;
+            flex-shrink: 0;
+            font-size: 1.45rem !important;
+            line-height: 1.25 !important;
         }
+
         #slide-21.st21-playing .st21-title {
-            animation: st21-fade-down 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation: st21-fade-down 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
-        #slide-21 .st21-number {
-            position: relative;
-            opacity: 0;
-            font-variant-numeric: tabular-nums;
-            z-index: 1;
-            font-size: 4.6rem !important;
-            line-height: 1 !important;
-        }
-        @media (min-width: 768px) {
-            #slide-21 .st21-number { font-size: 5.9rem !important; }
-        }
-        @media (min-width: 1024px) {
-            #slide-21 .st21-number { font-size: 7.25rem !important; }
-        }
-        #slide-21.st21-counting .st21-number,
-        #slide-21.st21-count-done .st21-number,
-        #slide-21.st21-finished .st21-number {
-            opacity: 1;
-        }
-        #slide-21.st21-count-done .st21-number {
-            animation: st21-pulse 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        #slide-21.st21-count-done .st21-number::after {
-            content: '';
-            position: absolute;
-            inset: -28% -18%;
-            border-radius: 999px;
-            background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.38), rgba(16, 185, 129, 0.22) 45%, transparent 72%);
-            filter: blur(14px);
-            z-index: -1;
-            pointer-events: none;
-            animation: st21-glow 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        #slide-21 .st21-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.6rem;
+            width: 100%;
+            max-width: 48rem;
+            margin: 0 auto;
         }
 
-        #slide-21 .st21-subtitle {
+        #slide-21 .st21-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0.7rem 0.55rem;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 0.85rem;
             opacity: 0;
             transform: translateY(14px);
         }
-        #slide-21.st21-subtitle-visible .st21-subtitle {
-            animation: st21-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+        #slide-21 .st21-stat--hero {
+            grid-column: 1 / -1;
+            padding: 0.95rem 0.85rem;
+            background: rgba(14, 165, 233, 0.06);
+            border: 1px solid rgba(14, 165, 233, 0.22);
+            border-radius: 1rem;
+            position: relative;
+        }
+
+        #slide-21 .st21-stat.is-visible {
+            animation: st21-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        #slide-21 .st21-stat-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 2.1rem;
+            height: 2.1rem;
+            border-radius: 0.65rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        #slide-21 .st21-stat-icon--sky { background: rgba(14, 165, 233, 0.15); color: #38bdf8; }
+        #slide-21 .st21-stat-icon--emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        #slide-21 .st21-stat-icon--violet { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+        #slide-21 .st21-stat-icon--hero {
+            width: 2.65rem;
+            height: 2.65rem;
+            border-radius: 0.8rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            background: rgba(14, 165, 233, 0.18);
+            color: #38bdf8;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.12);
+        }
+
+        #slide-21 .st21-stat-value {
+            display: block;
+            font-size: 1.95rem;
+            font-weight: 800;
+            color: #f8fafc;
+            line-height: 1.1;
+            font-variant-numeric: tabular-nums;
+        }
+
+        #slide-21 .st21-stat-label {
+            display: block;
+            margin-top: 0.3rem;
+            font-size: 0.78rem;
+            line-height: 1.35;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        #slide-21 .st21-stat-value--hero {
+            font-size: 3rem;
+            background: linear-gradient(to left, #0ea5e9, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        #slide-21 .st21-stat--hero .st21-stat-label {
+            margin-top: 0.4rem;
+            font-size: 0.92rem;
+            color: #cbd5e1;
+        }
+
+        #slide-21 .st21-stat--hero.is-hero-highlight .st21-stat-value--hero {
+            animation: st21-pulse 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        #slide-21 .st21-stat--hero.is-hero-highlight::after {
+            content: '';
+            position: absolute;
+            inset: -8% -4%;
+            border-radius: 1.5rem;
+            background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.28), rgba(16, 185, 129, 0.14) 50%, transparent 72%);
+            filter: blur(12px);
+            z-index: -1;
+            pointer-events: none;
+            animation: st21-glow 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
         #slide-21.st21-finished .st21-title,
-        #slide-21.st21-finished .st21-number,
-        #slide-21.st21-finished .st21-subtitle {
+        #slide-21.st21-finished .st21-stat {
             opacity: 1;
             transform: none;
         }
 
-        #slide-21 .st21-particle {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 4px;
-            height: 4px;
-            border-radius: 999px;
-            background: rgba(56, 189, 248, 0.75);
-            box-shadow: 0 0 8px rgba(14, 165, 233, 0.45);
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0;
-            animation: st21-particle-rise var(--dur, 1.1s) cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) forwards;
+        #slide-21.slide-container {
+            padding: 1.35rem 1.5rem !important;
         }
-        #slide-21 .st21-particle:nth-child(3n) {
-            background: rgba(52, 211, 153, 0.7);
-            box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
-            --peak: 0.45;
+
+        @media (min-width: 768px) {
+            #slide-21.slide-container {
+                padding: 1.65rem 2rem !important;
+            }
+            #slide-21 .st21-body { gap: 1.05rem; }
+            #slide-21 .st21-title {
+                font-size: 1.65rem !important;
+                line-height: 1.2 !important;
+            }
+            #slide-21 .st21-stats { gap: 0.7rem; }
+            #slide-21 .st21-stat { padding: 0.8rem 0.65rem; }
+            #slide-21 .st21-stat-icon {
+                width: 2.25rem;
+                height: 2.25rem;
+                font-size: 1rem;
+                margin-bottom: 0.45rem;
+            }
+            #slide-21 .st21-stat-icon--hero {
+                width: 2.85rem;
+                height: 2.85rem;
+                font-size: 1.3rem;
+                margin-bottom: 0.55rem;
+            }
+            #slide-21 .st21-stat-value { font-size: 2.1rem; }
+            #slide-21 .st21-stat-label { font-size: 0.82rem; }
+            #slide-21 .st21-stat-value--hero { font-size: 3.35rem; }
+            #slide-21 .st21-stat--hero .st21-stat-label { font-size: 0.98rem; }
+            #slide-21 .st21-stat--hero { padding: 1.05rem 0.95rem; }
         }
-        #slide-21 .st21-particle:nth-child(3n+1) {
-            width: 3px;
-            height: 3px;
-            --peak: 0.35;
+
+        /* Slide 21 — fullscreen keeps the larger presentation sizes */
+        #slide-viewport:fullscreen #slide-21.slide-container,
+        #slide-viewport:-webkit-full-screen #slide-21.slide-container {
+            padding: 2.75rem !important;
+        }
+
+        @media (min-width: 768px) {
+            #slide-viewport:fullscreen #slide-21.slide-container,
+            #slide-viewport:-webkit-full-screen #slide-21.slide-container {
+                padding: 3.85rem !important;
+            }
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-body,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-body {
+            gap: 1.75rem;
+            padding: 0.5rem 0;
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-title,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-title {
+            font-size: 2.48rem !important;
+            line-height: 2.7rem !important;
+        }
+
+        @media (min-width: 768px) {
+            #slide-viewport:fullscreen #slide-21 .st21-body,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-body {
+                gap: 2rem;
+            }
+            #slide-viewport:fullscreen #slide-21 .st21-title,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-title {
+                font-size: 3.3rem !important;
+                line-height: 1.12 !important;
+            }
+            #slide-viewport:fullscreen #slide-21 .st21-stats,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-stats {
+                gap: 1.15rem;
+                max-width: 54rem;
+            }
+            #slide-viewport:fullscreen #slide-21 .st21-stat,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-stat {
+                padding: 1.3rem 1rem;
+                border-radius: 1rem;
+            }
+            #slide-viewport:fullscreen #slide-21 .st21-stat-icon,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-stat-icon {
+                width: 3rem;
+                height: 3rem;
+                border-radius: 0.75rem;
+                font-size: 1.3rem;
+                margin-bottom: 0.75rem;
+            }
+            #slide-viewport:fullscreen #slide-21 .st21-stat-icon--hero,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-stat-icon--hero {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 1rem;
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+            #slide-viewport:fullscreen #slide-21 .st21-stat-value,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-stat-value {
+                font-size: 2.85rem;
+            }
+            #slide-viewport:fullscreen #slide-21 .st21-stat-label,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-stat-label {
+                margin-top: 0.45rem;
+                font-size: 1.05rem;
+                line-height: 1.4;
+            }
+            #slide-viewport:fullscreen #slide-21 .st21-stat-value--hero,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-stat-value--hero {
+                font-size: 5rem;
+            }
+            #slide-viewport:fullscreen #slide-21 .st21-stat--hero .st21-stat-label,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-stat--hero .st21-stat-label {
+                margin-top: 0.6rem;
+                font-size: 1.3rem;
+            }
+            #slide-viewport:fullscreen #slide-21 .st21-stat--hero,
+            #slide-viewport:-webkit-full-screen #slide-21 .st21-stat--hero {
+                padding: 1.65rem 1.5rem;
+                border-radius: 1.25rem;
+            }
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-stats,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-stats {
+            gap: 1rem;
+            max-width: 54rem;
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-stat,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-stat {
+            padding: 1.15rem 0.85rem;
+            border-radius: 1rem;
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-stat-icon,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-stat-icon {
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 0.75rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.65rem;
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-stat-icon--hero,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-stat-icon--hero {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 1rem;
+            font-size: 1.55rem;
+            margin-bottom: 0.85rem;
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-stat-value,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-stat-value {
+            font-size: 2.6rem;
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-stat-label,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-stat-label {
+            margin-top: 0.45rem;
+            font-size: 0.98rem;
+            line-height: 1.4;
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-stat-value--hero,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-stat-value--hero {
+            font-size: 4.25rem;
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-stat--hero .st21-stat-label,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-stat--hero .st21-stat-label {
+            margin-top: 0.6rem;
+            font-size: 1.2rem;
+        }
+
+        #slide-viewport:fullscreen #slide-21 .st21-stat--hero,
+        #slide-viewport:-webkit-full-screen #slide-21 .st21-stat--hero {
+            padding: 1.5rem 1.25rem;
+            border-radius: 1.25rem;
         }
 
         /* Closing slide — large title with white → blue → green gradient */
@@ -1426,7 +1652,8 @@
             align-items: center;
             justify-content: center;
             gap: 0.45rem;
-            flex-direction: row-reverse;
+            flex-direction: row;
+            direction: rtl;
         }
         #slide-8 .station-list li::before {
             content: '•';
@@ -1940,7 +2167,7 @@
                         <div class="agenda-icon agenda-icon--accent">
                             <i class="fa-solid fa-list-ul"></i>
                         </div>
-                        <h3 class="agenda-card-title">פרויקט לידות</h3>
+                        <h3 class="agenda-card-title">תכנון הפרויקט</h3>
                     </div>
 
                     <div class="agenda-card">
@@ -2067,7 +2294,7 @@
                 </div>
 
                 <div class="flex flex-col gap-3 md:gap-4 flex-grow justify-center">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
                         <div class="p-4 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
                             <div class="w-10 h-10 rounded-lg bg-brand-primary/15 text-brand-primary flex items-center justify-center text-lg mb-2">
                                 <i class="fa-solid fa-diagram-project"></i>
@@ -2087,6 +2314,13 @@
                                 <i class="fa-solid fa-network-wired"></i>
                             </div>
                             <h3 class="font-bold text-white text-sm md:text-base">צוות אינטגרציה</h3>
+                        </div>
+
+                        <div class="p-4 bg-brand-dark/50 rounded-2xl border border-white/5 text-center flex flex-col items-center justify-center">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-lg mb-2">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-sm md:text-base">צוות פיתוח</h3>
                         </div>
                     </div>
 
@@ -2744,22 +2978,22 @@
                     </div>
 
                     <div class="p-6 bg-brand-dark/40 rounded-2xl border border-white/5 flex gap-5 items-start">
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl shrink-0">
-                            <i class="fa-solid fa-hospital"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-lg md:text-xl mb-2">היערכות לוגיסטית</h4>
-                            <p class="text-sm md:text-base text-brand-muted leading-relaxed">היערכות מבחינה לוגיסטית של בתי החולים לצורך יישום מלא של התהליך.</p>
-                        </div>
-                    </div>
-
-                    <div class="p-6 bg-brand-dark/40 rounded-2xl border border-white/5 flex gap-5 items-start">
                         <div class="w-12 h-12 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center text-xl shrink-0">
                             <i class="fa-solid fa-layer-group"></i>
                         </div>
                         <div>
                             <h4 class="font-bold text-white text-lg md:text-xl mb-2">פרויקטים מקבילים</h4>
                             <p class="text-sm md:text-base text-brand-muted leading-relaxed">פיתוח ועלייה לאוויר במקביל לפרויקט נמ"ר מזו"ר שיבא.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-brand-dark/40 rounded-2xl border border-white/5 flex gap-5 items-start">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-hospital"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg md:text-xl mb-2">היערכות לוגיסטית</h4>
+                            <p class="text-sm md:text-base text-brand-muted leading-relaxed">היערכות מבחינה לוגיסטית של בתי החולים לצורך יישום מלא של התהליך.</p>
                         </div>
                     </div>
                 </div>
@@ -2822,18 +3056,42 @@
         <div id="slide-21" class="slide-container slide-hidden w-full bg-brand-card rounded-3xl border border-white/5 p-8 md:p-12 flex-col justify-between shadow-2xl relative overflow-hidden">
             <div class="absolute inset-0 bg-radial-gradient from-brand-primary/5 via-transparent to-transparent pointer-events-none"></div>
 
-            <div class="flex flex-col flex-grow justify-center items-center text-center space-y-8 my-auto">
-                <div class="space-y-3">
-                    <h2 class="st21-title text-3xl md:text-4xl font-extrabold text-white">קצת מספרים</h2>
-                </div>
+            <div class="st21-body">
+                <h2 class="st21-title text-3xl md:text-4xl font-extrabold text-white">קצת מספרים</h2>
 
-                <div class="st21-number text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-l from-brand-primary to-brand-secondary bg-clip-text text-transparent leading-none">
-                    <span class="st21-number-value">כ-20 אלף</span>
-                </div>
+                <div class="st21-stats">
+                    <div class="st21-stat" data-st21-stat>
+                        <div class="st21-stat-icon st21-stat-icon--sky" aria-hidden="true">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <span class="st21-stat-value">4</span>
+                        <span class="st21-stat-label">חודשים</span>
+                    </div>
 
-                <p class="st21-subtitle text-lg md:text-xl text-brand-muted max-w-3xl">
-                    עד כה נולדו ודווחו באופן דיגיטלי כ-20 אלף ילודים
-                </p>
+                    <div class="st21-stat" data-st21-stat>
+                        <div class="st21-stat-icon st21-stat-icon--emerald" aria-hidden="true">
+                            <i class="fa-solid fa-hospital"></i>
+                        </div>
+                        <span class="st21-stat-value">9</span>
+                        <span class="st21-stat-label">מרכזים רפואיים</span>
+                    </div>
+
+                    <div class="st21-stat" data-st21-stat>
+                        <div class="st21-stat-icon st21-stat-icon--violet" aria-hidden="true">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <span class="st21-stat-value">23</span>
+                        <span class="st21-stat-label">ימים שבהם עלינו לאוויר</span>
+                    </div>
+
+                    <div class="st21-stat st21-stat--hero" data-st21-stat>
+                        <div class="st21-stat-icon st21-stat-icon--hero" aria-hidden="true">
+                            <i class="fa-solid fa-baby"></i>
+                        </div>
+                        <span class="st21-stat-value st21-stat-value--hero">20 אלף</span>
+                        <span class="st21-stat-label">יילודים שדווחו עד היום</span>
+                    </div>
+                </div>
             </div>
 
             <div class="slide-footer flex justify-between items-center border-t border-white/5 text-brand-muted">
@@ -2917,9 +3175,6 @@
         let coverRevealToken = 0;
         let teamRevealToken = 0;
         let st21AnimationToken = 0;
-
-        const ST21_FINAL_TEXT = 'כ-20 אלף';
-        const ST21_COUNT_STEPS = [0, 500, 2000, 5000, 10000, 15000, 20000];
 
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
@@ -3103,62 +3358,24 @@
             slide.classList.add('team-reveal-finished');
         }
 
-        function formatSt21Count(value) {
-            return value.toLocaleString('en-US');
-        }
-
         function resetSt21Slide(slide) {
-            slide.classList.remove('st21-playing', 'st21-counting', 'st21-count-done', 'st21-subtitle-visible', 'st21-finished');
+            slide.classList.remove('st21-playing', 'st21-finished');
             const title = slide.querySelector('.st21-title');
-            const number = slide.querySelector('.st21-number');
-            const valueEl = slide.querySelector('.st21-number-value');
-            const subtitle = slide.querySelector('.st21-subtitle');
-            [title, subtitle].forEach(el => {
-                if (!el) return;
-                el.style.animation = 'none';
-                el.style.opacity = '';
-                el.style.transform = '';
-                void el.offsetWidth;
-                el.style.animation = '';
+            if (title) {
+                title.style.animation = 'none';
+                title.style.opacity = '';
+                title.style.transform = '';
+                void title.offsetWidth;
+                title.style.animation = '';
+            }
+            slide.querySelectorAll('[data-st21-stat]').forEach(stat => {
+                stat.classList.remove('is-visible', 'is-hero-highlight');
+                stat.style.animation = 'none';
+                stat.style.opacity = '';
+                stat.style.transform = '';
+                void stat.offsetWidth;
+                stat.style.animation = '';
             });
-            if (valueEl) {
-                valueEl.textContent = ST21_FINAL_TEXT;
-            }
-            if (number) {
-                number.style.animation = 'none';
-                number.style.opacity = '';
-                number.style.transform = '';
-                void number.offsetWidth;
-                number.style.animation = '';
-                number.querySelectorAll('.st21-particle').forEach(p => p.remove());
-            }
-        }
-
-        function spawnSt21Particles(numberEl) {
-            if (!numberEl) return;
-            numberEl.querySelectorAll('.st21-particle').forEach(p => p.remove());
-            for (let i = 0; i < 14; i++) {
-                const particle = document.createElement('span');
-                particle.className = 'st21-particle';
-                particle.setAttribute('aria-hidden', 'true');
-                particle.style.setProperty('--x', `${(Math.random() - 0.5) * 140}px`);
-                particle.style.setProperty('--delay', `${Math.random() * 0.35}s`);
-                particle.style.setProperty('--dur', `${0.95 + Math.random() * 0.55}s`);
-                numberEl.appendChild(particle);
-            }
-        }
-
-        async function animateSt21Count(valueEl, token) {
-            const stepDelays = [200, 220, 260, 320, 400, 500];
-
-            for (let i = 0; i < ST21_COUNT_STEPS.length; i++) {
-                if (token !== st21AnimationToken) return false;
-                valueEl.textContent = formatSt21Count(ST21_COUNT_STEPS[i]);
-                if (i < stepDelays.length) {
-                    await sleep(stepDelays[i]);
-                }
-            }
-            return token === st21AnimationToken;
         }
 
         async function playSt21Animation() {
@@ -3170,32 +3387,23 @@
             void slide.offsetWidth;
             slide.classList.add('st21-playing');
 
-            const valueEl = slide.querySelector('.st21-number-value');
-            const numberEl = slide.querySelector('.st21-number');
-            if (!valueEl || !numberEl) return;
-
-            await sleep(680);
+            await sleep(500);
             if (token !== st21AnimationToken) return;
 
-            slide.classList.add('st21-counting');
-            valueEl.textContent = '0';
+            const stats = slide.querySelectorAll('[data-st21-stat]');
+            for (const stat of stats) {
+                if (token !== st21AnimationToken) return;
+                stat.classList.add('is-visible');
+                if (stat.classList.contains('st21-stat--hero')) {
+                    await sleep(450);
+                    if (token !== st21AnimationToken) return;
+                    stat.classList.add('is-hero-highlight');
+                } else {
+                    await sleep(320);
+                }
+            }
 
-            const completed = await animateSt21Count(valueEl, token);
-            if (!completed) return;
-
-            valueEl.textContent = ST21_FINAL_TEXT;
-            slide.classList.remove('st21-counting');
-            slide.classList.add('st21-count-done');
-
-            await sleep(580);
             if (token !== st21AnimationToken) return;
-
-            slide.classList.add('st21-subtitle-visible');
-
-            await sleep(420);
-            if (token !== st21AnimationToken) return;
-
-            spawnSt21Particles(numberEl);
             slide.classList.add('st21-finished');
         }
 
