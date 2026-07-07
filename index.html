@@ -497,6 +497,14 @@
             opacity: 0;
             font-variant-numeric: tabular-nums;
             z-index: 1;
+            font-size: 4.6rem !important;
+            line-height: 1 !important;
+        }
+        @media (min-width: 768px) {
+            #slide-21 .st21-number { font-size: 5.9rem !important; }
+        }
+        @media (min-width: 1024px) {
+            #slide-21 .st21-number { font-size: 7.25rem !important; }
         }
         #slide-21.st21-counting .st21-number,
         #slide-21.st21-count-done .st21-number,
@@ -1188,6 +1196,25 @@
         #slide-3 .team-member:nth-child(1) .team-ring { color: #38bdf8; }
         #slide-3 .team-member:nth-child(2) .team-ring { color: #34d399; }
         #slide-3 .team-member:nth-child(3) .team-ring { color: #a78bfa; }
+        #slide-3 .team-member:nth-child(1) .team-photo {
+            object-position: 62% center;
+        }
+
+        #slide-viewport:fullscreen #slide-3 .team-grid,
+        #slide-viewport:-webkit-full-screen #slide-3 .team-grid {
+            gap: 3.25rem;
+        }
+
+        #slide-viewport:fullscreen #slide-3 .team-member,
+        #slide-viewport:-webkit-full-screen #slide-3 .team-member {
+            max-width: 21rem;
+        }
+
+        #slide-viewport:fullscreen #slide-3 .team-photo-frame,
+        #slide-viewport:-webkit-full-screen #slide-3 .team-photo-frame {
+            width: 17rem;
+            height: 17rem;
+        }
 
         /* Slide 19 — challenges layout, scaled ~12.5% for readability */
         #slide-19 .text-xs { font-size: 0.93rem !important; line-height: 1.2rem !important; }
@@ -1391,8 +1418,8 @@
             width: 100%;
         }
         #slide-8 .station-list li {
-            font-size: 1.18rem;
-            line-height: 1.38;
+            font-size: 1.26rem;
+            line-height: 1.4;
             color: #94a3b8;
             font-weight: 500;
             display: flex;
@@ -1407,9 +1434,25 @@
             flex-shrink: 0;
         }
         @media (min-width: 768px) {
-            #slide-8 .station-list li { font-size: 1.32rem; }
-            #slide-8 .premium-timeline__detail { padding: 1.125rem 1rem; }
-            #slide-8 .station-list { gap: 0.7rem; }
+            #slide-8 .station-list li { font-size: 1.42rem; }
+            #slide-8 .premium-timeline__detail { padding: 1.15rem 1.05rem; }
+            #slide-8 .station-list { gap: 0.72rem; }
+        }
+
+        #slide-viewport:fullscreen #slide-8 .station-list li,
+        #slide-viewport:-webkit-full-screen #slide-8 .station-list li {
+            font-size: 1.55rem;
+            line-height: 1.42;
+        }
+
+        #slide-viewport:fullscreen #slide-8 .premium-timeline__detail,
+        #slide-viewport:-webkit-full-screen #slide-8 .premium-timeline__detail {
+            padding: 1.3rem 1.15rem;
+        }
+
+        #slide-viewport:fullscreen #slide-8 .station-list,
+        #slide-viewport:-webkit-full-screen #slide-8 .station-list {
+            gap: 0.82rem;
         }
 
         #slide-8.timeline-replay .st8-anim-header {
